@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.pugmatic.MainActivity">
+
+    <TextView
+        android:id="@+id/text_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gamble your life away!"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/wheel2_row_top"
+        />
+
+
+    <ImageView
+        android:id="@+id/wheel1_row_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/star_big_on"
+        android:text="Gamble your life away!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/wheel2_row_top"
+        app:layout_constraintTop_toBottomOf="@id/text_bar" />
+
+    <ImageView
+        android:id="@+id/wheel2_row_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/star_big_on"
+        android:text="Gamble your life away!"
+        app:layout_constraintLeft_toRightOf="@id/wheel1_row_top"
+        app:layout_constraintRight_toLeftOf="@id/wheel3_row_top"
+        app:layout_constraintTop_toBottomOf="@id/text_bar" />
+
+    <ImageView
+        android:id="@+id/wheel3_row_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/star_big_on"
+        android:text="Gamble your life away!"
+        app:layout_constraintLeft_toRightOf="@id/wheel2_row_top"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_bar" />
+
+
+    <ImageView
+        android:id="@+id/wheel1_row_mid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/star_big_on"
+        android:text="Gamble your life away!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/wheel2_row_mid"
+        app:layout_constraintTop_toBottomOf="@id/wheel1_row_top" />
+
+    <ImageView
+        android:id="@+id/wheel2_row_mid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/star_big_on"
+        android:text="Gamble your life away!"
+        app:layout_constraintLeft_toRightOf="@id/wheel1_row_mid"
+        app:layout_constraintRight_toLeftOf="@id/wheel3_row_mid"
+        app:layout_constraintTop_toBottomOf="@id/wheel2_row_top" />
+
+    />
+
+    <ImageView
+        android:id="@+id/wheel3_row_mid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/star_big_on"
+        android:text="Gamble your life away!"
+        app:layout_constraintLeft_toRightOf="@id/wheel2_row_mid"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wheel3_row_top"
+
+        />
+
+    <ImageView
+        android:id="@+id/wheel1_row_bot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/star_big_on"
+        android:text="Gamble your life away!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/wheel2_row_bot"
+        app:layout_constraintTop_toBottomOf="@id/wheel1_row_mid" />
+
+    <ImageView
+        android:id="@+id/wheel2_row_bot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/star_big_on"
+        android:text="Gamble your life away!"
+        app:layout_constraintLeft_toRightOf="@id/wheel1_row_bot"
+        app:layout_constraintRight_toLeftOf="@id/wheel3_row_bot"
+        app:layout_constraintTop_toBottomOf="@id/wheel2_row_mid" />
+
+    />
+
+    <ImageView
+        android:id="@+id/wheel3_row_bot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/star_big_on"
+        android:text="Gamble your life away!"
+        app:layout_constraintLeft_toRightOf="@id/wheel2_row_bot"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wheel3_row_mid"
+
+        />
+
+
+</android.support.constraint.ConstraintLayout>
