@@ -24,8 +24,8 @@ public class Machine {
     public Machine(WheelSet wheelSet) {
         this.wheelSet = wheelSet;
         this.wheels = wheelSet.getWheels();
-        this.nudges = 0;
-        this.holds = 0;
+        this.nudges = 2;
+        this.holds = 2;
         this.cashSupply = 15;
         this.userMoney = 0;
         this.payOutTracker = 0;
@@ -102,7 +102,7 @@ public class Machine {
         return cashSupply;
     }
 
-    public int getUserMoney() {
+    public Integer getUserMoney() {
         Integer userMoneyInMachine = new Integer(this.userMoney);
         return userMoneyInMachine;
     }
@@ -113,17 +113,17 @@ public class Machine {
         cashSupply += moneyAdded;
     }
 
-    public int getPayOutTracker() {
+    public Integer getPayOutTracker() {
         Integer payOutAmount = new Integer(payOutTracker);
         return payOutAmount;
     }
 
-    public int getNudges() {
+    public Integer getNudges() {
         Integer nudgesNum = new Integer(nudges);
         return nudgesNum;
     }
 
-    public int getHoldsNum() {
+    public Integer getHoldsNum() {
         Integer holdsNum = new Integer(holds);
         return holdsNum;
     }

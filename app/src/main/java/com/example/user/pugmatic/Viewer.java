@@ -83,7 +83,7 @@ public class Viewer {
 
     public void pull() {
         System.out.println();
-        System.out.println("Hit enter to pull!");
+        System.out.println("Hit enter to pullRequest!");
     }
 
     public void welcome() {

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.user.pugmatic.MainActivity">
 
+
     <TextView
         android:id="@+id/text_bar"
         android:layout_width="0dp"
@@ -24,8 +25,8 @@
 
     <ImageView
         android:id="@+id/wheel1_row_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/symbol_size"
+        android:layout_height="@dimen/symbol_size"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/wheel2_row_top"
@@ -33,8 +34,8 @@
 
     <ImageView
         android:id="@+id/wheel2_row_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/symbol_size"
+        android:layout_height="@dimen/symbol_size"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel1_row_top"
         app:layout_constraintRight_toLeftOf="@+id/wheel3_row_top"
@@ -42,8 +43,8 @@
 
     <ImageView
         android:id="@+id/wheel3_row_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/symbol_size"
+        android:layout_height="@dimen/symbol_size"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel2_row_top"
         app:layout_constraintRight_toRightOf="parent"
@@ -52,8 +53,8 @@
 
     <ImageView
         android:id="@+id/wheel1_row_mid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/symbol_size"
+        android:layout_height="@dimen/symbol_size"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/wheel2_row_mid"
@@ -61,8 +62,8 @@
 
     <ImageView
         android:id="@+id/wheel2_row_mid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/symbol_size"
+        android:layout_height="@dimen/symbol_size"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel1_row_mid"
         app:layout_constraintRight_toLeftOf="@+id/wheel3_row_mid"
@@ -72,8 +73,8 @@
 
     <ImageView
         android:id="@+id/wheel3_row_mid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/symbol_size"
+        android:layout_height="@dimen/symbol_size"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel2_row_mid"
         app:layout_constraintRight_toRightOf="parent"
@@ -83,8 +84,8 @@
 
     <ImageView
         android:id="@+id/wheel1_row_bot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/symbol_size"
+        android:layout_height="@dimen/symbol_size"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/wheel2_row_bot"
@@ -92,8 +93,8 @@
 
     <ImageView
         android:id="@+id/wheel2_row_bot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/symbol_size"
+        android:layout_height="@dimen/symbol_size"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel1_row_bot"
         app:layout_constraintRight_toLeftOf="@+id/wheel3_row_bot"
@@ -103,8 +104,8 @@
 
     <ImageView
         android:id="@+id/wheel3_row_bot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/symbol_size"
+        android:layout_height="@dimen/symbol_size"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel2_row_bot"
         app:layout_constraintRight_toRightOf="parent"
@@ -116,12 +117,12 @@
         android:id="@+id/nudge1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="whenNudge1Clicked"
         android:text="nudge"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/nudge2"
-        app:layout_constraintTop_toBottomOf="@+id/wheel1_row_bot"
 
-        />
+        app:layout_constraintTop_toBottomOf="@+id/wheel1_row_bot" />
     <Button
         android:id="@+id/nudge2"
         android:layout_width="wrap_content"
@@ -227,22 +228,22 @@
         android:id="@+id/add_money_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="whenAddMoneyClicked"
         android:text="Add £1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/spin_button"
-        app:layout_constraintTop_toBottomOf="@id/credit_display"
-        />
+        app:layout_constraintTop_toBottomOf="@id/credit_display" />
 
 
     <Button
         android:id="@+id/spin_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="whenSpinClicked"
         android:text="spin"
         app:layout_constraintLeft_toRightOf="@id/add_money_button"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/winnings_display"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/winnings_display" />
 
     <Button
         android:id="@+id/quit_button"

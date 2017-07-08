@@ -17,6 +17,7 @@ public class Game {
     Boolean win;
     boolean stayInLoop;
     boolean keepPlaying;
+    private boolean pulled;
 
 
     public Game(Player player, Machine machine, Viewer viewer) {
@@ -27,6 +28,8 @@ public class Game {
         this.wheels = machine.getWheels();
         this.win = false;
         this.keepPlaying = true;
+        this.pulled = false;
+        this.machine.spinAll();
     }
 
     public void run() {
@@ -49,13 +52,18 @@ public class Game {
         viewer.status();
         viewer.moneyPlease();
         int bettingMoney = UserInput.putMoneyIn(player);
-        machine.addMoney(bettingMoney);
-        player.removeMoney(bettingMoney);
+        addMoney(bettingMoney);
     }
+
+    public void addMoney(int amount){
+        machine.addMoney(amount);
+        player.removeMoney(amount);
+    }
+
 
     public void play() {
         stayInLoop = true;
-        pull();
+        pullRequest();
         win = machine.checkForWin();
         if (win) {
             winScenario();
@@ -134,18 +142,21 @@ public class Game {
         viewer.printWheelNumbers();
         viewer.chooseWheel();
         int choice = UserInput.getUserInt() - 1;
-        machine.nudge(wheels.get(choice));
-        machine.deductNudge();
+        doNudge(choice);
         viewer.printCurrentPosition();
     }
 
-    public void pull() {
+    public void doNudge(int wheelNum){
+        machine.nudge(wheels.get(wheelNum));
+        machine.deductNudge();
+    }
+
+    public void pullRequest() {
 //        viewer.printCurrentPosition(wheels);
         viewer.pull();
         String answer = UserInput.getString();
         if (answer.equals("")) {
-            machine.spinAll();
-            machine.loseCredit();
+            pull();
             viewer.printCurrentPosition();
 
         } else {
@@ -153,8 +164,20 @@ public class Game {
         }
     }
 
+    public void pull(){
+        machine.spinAll();
+        machine.loseCredit();
+    }
+
     public boolean moneyInMachine(){
         return (machine.getUserMoney() > 0);
     }
 
+    public ArrayList<Wheel> getWheels() {
+        return wheels;
+    }
+
+    public boolean isNudges() {
+        return machine.getNudges()>0;
+    }
 }
