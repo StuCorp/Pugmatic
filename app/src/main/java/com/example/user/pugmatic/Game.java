@@ -112,7 +112,7 @@ public class Game {
         }
     }
 
-    private void winScenario() {
+    public void winScenario() {
         viewer.youWin();
         machine.payPlayer(player);
     }
@@ -179,5 +179,14 @@ public class Game {
 
     public boolean isNudges() {
         return machine.getNudges()>0;
+    }
+
+    public boolean isHolds() {
+        return machine.getHoldsNum()>0;
+    }
+
+    public void calculateNudgesAndHolds() {
+        machine.calculateNudges();
+        machine.calculateHolds();
     }
 }

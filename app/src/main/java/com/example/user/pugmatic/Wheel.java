@@ -10,11 +10,13 @@ public class Wheel {
 
     private ArrayList<Symbol> wheel;
     private ArrayList<Symbol> pack;
+    private boolean holdOn;
 
     public Wheel(SymbolPack symbolPack){
         this.wheel = new ArrayList<>();
         this.pack = symbolPack.getPack();
         fillWheel();
+        holdOn = false;
     }
 
 //    public void fillWheel(){
@@ -48,6 +50,18 @@ public class Wheel {
 
     public void setFruitAtZeroIndex(Symbol symbol){
         this.wheel.set(0,symbol);
+    }
+
+    public boolean isHoldOn() {
+        return this.holdOn;
+    }
+
+    public void setHoldOnOff() {
+        this.holdOn = false;
+    }
+
+    public void setHoldOnOn() {
+        this.holdOn = true;
     }
 }
 

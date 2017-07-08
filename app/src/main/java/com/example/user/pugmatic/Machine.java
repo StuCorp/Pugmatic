@@ -19,16 +19,31 @@ public class Machine {
     private int cashSupply;
     private int userMoney;
     private int payOutTracker;
+    private boolean holdOn;
+    private boolean hold1;
+    private boolean hold2;
+    private boolean hold3;
+    private Symbol wheel1CurrentSymbol;
+    private Symbol wheel2CurrentSymbol;
+    private Symbol wheel3CurrentSymbol;
 
 
     public Machine(WheelSet wheelSet) {
         this.wheelSet = wheelSet;
         this.wheels = wheelSet.getWheels();
-        this.nudges = 2;
-        this.holds = 2;
+        this.nudges = 0;
+        this.holds = 0;
         this.cashSupply = 15;
         this.userMoney = 0;
         this.payOutTracker = 0;
+        holdOn = false;
+        hold1 = false;
+        hold2 = false;
+        hold3 = false;
+        wheel1CurrentSymbol = wheels.get(0).getCurrentFruit();
+        wheel2CurrentSymbol = wheels.get(1).getCurrentFruit();
+        wheel3CurrentSymbol = wheels.get(2).getCurrentFruit();
+
     }
 
     public void spin(Wheel wheel) {
@@ -38,7 +53,7 @@ public class Machine {
 
     public int getSpinNum() {
 
-        int arrayLength =  wheels.get(0).getWheel().size();
+        int arrayLength = wheels.get(0).getWheel().size();
 //        int arrayLength = Fruit.values().length;
         Random rand = new Random();
         int spins = rand.nextInt(arrayLength);
@@ -47,21 +62,28 @@ public class Machine {
 
     public void spinAll() {
         for (Wheel wheel : wheels) {
-            spin(wheel);
-        }
-        while (checkForWin() && cashSupply < 10) {
-            for (Wheel wheel : wheels) {
+            if (!wheel.isHoldOn()) {
                 spin(wheel);
             }
+            else{
+                wheel.setHoldOnOff();
+            }
+//            while (checkForWin() && cashSupply < 10) {
+//                for (Wheel wheel : wheels) {
+//                    spin(wheel);
+//                }
+            }
         }
-    }
 
     public void nudge(Wheel wheel) {
         Collections.rotate(wheel.getWheel(), 1);
     }
 
     public boolean checkForWin() {
-        if ((wheels.get(0).getCurrentFruit() == wheels.get(1).getCurrentFruit()) && (wheels.get(0).getCurrentFruit() == wheels.get(2).getCurrentFruit())) {
+        if ((wheels.get(0).getCurrentFruit().getName()
+                .equals(wheels.get(1).getCurrentFruit().getName())) &&
+                (wheels.get(0).getCurrentFruit().getName()
+                        .equals(wheels.get(2).getCurrentFruit().getName()))) {
             return true;
         } else {
             return false;
@@ -153,5 +175,27 @@ public class Machine {
             holdAmount = rand.nextInt(2);
         }
         holds = holdAmount * 2;
+    }
+
+
+    public boolean isHoldOnOn() {
+        return holdOn;
+    }
+
+    public boolean isHold1() {
+        return hold1;
+    }
+
+    public boolean isHold2() {
+        return hold2;
+    }
+
+    public boolean isHold3() {
+        return hold3;
+    }
+
+
+    public void addHold() {
+        this.holds++;
     }
 }

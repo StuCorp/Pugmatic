@@ -16,7 +16,7 @@ public class Player {
         this.money += payOut;
     }
 
-    public int getMoneyAmount(){
+    public Integer getMoneyAmount(){
         Integer money = new Integer(this.money);
         return money;
     }

@@ -11,16 +11,15 @@
         android:id="@+id/text_bar"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:text="Gamble your life away!"
-        android:textSize="15dp"
-        android:textAlignment="center"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Gamble your life away!"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/wheel2_row_top"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/wheel2_row_top"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
@@ -123,51 +122,57 @@
         app:layout_constraintRight_toLeftOf="@+id/nudge2"
 
         app:layout_constraintTop_toBottomOf="@+id/wheel1_row_bot" />
+
     <Button
         android:id="@+id/nudge2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="whenNudge2Clicked"
         android:text="nudge"
         app:layout_constraintLeft_toRightOf="@+id/nudge1"
         app:layout_constraintRight_toLeftOf="@+id/nudge3"
-        app:layout_constraintTop_toBottomOf="@+id/wheel2_row_bot"
 
-        />
+        app:layout_constraintTop_toBottomOf="@+id/wheel2_row_bot" />
+
     <Button
         android:id="@+id/nudge3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="whenNudge3Clicked"
         android:text="nudge"
         app:layout_constraintLeft_toRightOf="@+id/nudge2"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wheel3_row_bot"
 
-        />
+        app:layout_constraintTop_toBottomOf="@+id/wheel3_row_bot" />
 
     <Button
         android:id="@+id/hold1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="whenHold1Clicked"
         android:text="hold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/hold2"
-        app:layout_constraintTop_toBottomOf="@+id/nudge1"
 
-        />
+        app:layout_constraintTop_toBottomOf="@+id/nudge1" />
+
     <Button
         android:id="@+id/hold2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="whenHold2Clicked"
         android:text="hold"
         app:layout_constraintLeft_toRightOf="@+id/hold1"
         app:layout_constraintRight_toLeftOf="@+id/hold3"
         app:layout_constraintTop_toBottomOf="@+id/nudge2"
 
         />
+
     <Button
         android:id="@+id/hold3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="whenHold3Clicked"
         android:text="hold"
         app:layout_constraintLeft_toRightOf="@+id/hold2"
         app:layout_constraintRight_toLeftOf="parent"
@@ -179,50 +184,60 @@
         android:id="@+id/nudge_display"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:text="nudge count"
         android:textSize="17dp"
-        android:layout_marginLeft="30dp"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hold3"
         app:layout_constraintRight_toLeftOf="@+id/spin_button"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintTop_toBottomOf="@+id/hold3" />
 
     <TextView
         android:id="@+id/hold_display"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:text="hold count"
         android:textSize="17dp"
-        android:layout_marginLeft="30dp"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nudge_display"
         app:layout_constraintRight_toLeftOf="@+id/spin_button"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintTop_toBottomOf="@+id/nudge_display" />
 
 
     <TextView
         android:id="@+id/winnings_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:text="winnings: xx"
         android:textSize="17dp"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/hold_display"
         app:layout_constraintRight_toRightOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/hold_display" />
 
 
     <TextView
         android:id="@+id/credit_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:text="credit: xx"
         android:textSize="17dp"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hold_display"
         app:layout_constraintRight_toLeftOf="@id/winnings_display"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/hold_display" />
+
+    <TextView
+        android:id="@+id/wallet_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="wallet: xx"
+        android:textSize="17dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/credit_display"
+        app:layout_constraintTop_toBottomOf="@+id/hold_display" />
+
+
 
     <Button
         android:id="@+id/add_money_button"
@@ -253,9 +268,7 @@
         android:text="quit"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spin_button"
-        />
-
+        app:layout_constraintTop_toBottomOf="@+id/spin_button" />
 
 
 </android.support.constraint.ConstraintLayout>
