@@ -9,8 +9,10 @@ import java.util.Arrays;
 
 public class SymbolPackCollection {
     FruitPack fruitPack = new FruitPack();
-    EmojiPeoplePack peoplePack = new EmojiPeoplePack();
-    ArrayList<SymbolPack> pack = new ArrayList<>(Arrays.asList(fruitPack, peoplePack));
+    EmojiFacePack facePack = new EmojiFacePack();
+    EmojiClassicPack classicPack = new EmojiClassicPack();
+
+    ArrayList<SymbolPack> pack = new ArrayList<>(Arrays.asList(fruitPack, facePack, classicPack));
 
     public  ArrayList<SymbolPack> getPack() {
         return pack;
