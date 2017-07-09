@@ -1,12 +1,16 @@
 package com.example.user.pugmatic;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -21,6 +25,9 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
     String spinnerChoice;
     Switch switchWheel;
     int wheelChoice;
+    NumberPicker moneyPicker;
+    int moneyAmount;
+    Button submitOptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +60,9 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
         CompoundButton.OnCheckedChangeListener checkListener = new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean switched) {
-                if(switched){
+                if (switched) {
                     wheelChoice = 5;
-                } else{
+                } else {
                     wheelChoice = 3;
                 }
                 Toast.makeText(getApplicationContext(), "choice" + wheelChoice, Toast.LENGTH_SHORT).show();
@@ -63,6 +70,29 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
         };
         //set the listener on the switch - handles the listening
         switchWheel.setOnCheckedChangeListener(checkListener);
+
+
+        //USER MONEY NUMBER PICKER
+        //set moneypicker to widget id
+        moneyPicker = (NumberPicker) findViewById(R.id.money_picker);
+        moneyPicker.setMinValue(1);
+        moneyPicker.setMaxValue(50);
+
+        //set up value change listener
+        NumberPicker.OnValueChangeListener valueChangeListener = new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int oldValue, int newValue) {
+                Toast.makeText(getApplicationContext(), "£" + newValue, Toast.LENGTH_SHORT);
+                moneyAmount = newValue;
+                Log.d("Number Picker", "picked" + newValue);
+            }
+        };
+        //set the listener on the number picker
+        moneyPicker.setOnValueChangedListener(valueChangeListener);
+
+
+        //SUBMIT OPTIONS BUTTON
+        submitOptions = (Button) findViewById(R.id.submit_options_button);
 
     }
 
@@ -78,4 +108,13 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+    public void whenSubmitButtonClicked(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("pack", spinnerChoice);
+        intent.putExtra("wheelsNum", wheelChoice);
+        intent.putExtra("walletMoney", moneyAmount);
+        startActivity(intent);
+    }
+
 }
