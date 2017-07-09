@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Pugmatic</string>
+    <string name="choose_pack">Choose symbols!</string>
+    <string name="choose_pack_tv">Wheel mode</string>
 </resources>
