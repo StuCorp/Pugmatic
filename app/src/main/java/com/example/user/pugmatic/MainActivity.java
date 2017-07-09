@@ -1,6 +1,7 @@
 package com.example.user.pugmatic;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -46,10 +47,21 @@ public class MainActivity extends Activity {
 
 
 //game setup
-        Player player = new Player(20);
+        int packChoice;
+        int wheelsNum;
+        int userMoney;
+
+
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        packChoice = extras.getInt("pack");
+        wheelsNum = extras.getInt("wheelsNum");
+        userMoney = extras.getInt("walletMoney");
+
+        Player player = new Player(userMoney);
         FruitPack fruitPack = new FruitPack();
         HatPack hatPack = new HatPack();
-        WheelSet wheelSet = new WheelSet(fruitPack, 3);
+        WheelSet wheelSet = new WheelSet(fruitPack, wheelsNum);
         Machine machine = new Machine(wheelSet);
         Viewer viewer = new Viewer(player, machine);
         game = new Game(player, machine, viewer);

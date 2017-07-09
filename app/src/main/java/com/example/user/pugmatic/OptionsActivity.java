@@ -22,11 +22,11 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
 
     ArrayList<String> availablePacks;
     Spinner spinner;
-    String spinnerChoice;
+    int spinnerChoice;
     Switch switchWheel;
-    int wheelChoice;
+    int wheelChoice = 3;
     NumberPicker moneyPicker;
-    int moneyAmount;
+    int moneyAmount = 1;
     Button submitOptions;
 
     @Override
@@ -97,11 +97,12 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int arrayIndex, long l) {
         TextView choice = (TextView) view;
         //get string from textview
-        spinnerChoice = choice.getText().toString();
-        Toast.makeText(this, "You selected " + spinnerChoice, Toast.LENGTH_SHORT).show();
+        spinnerChoice = arrayIndex;
+        String packChoice = choice.getText().toString();
+        Toast.makeText(this, "You selected " + packChoice, Toast.LENGTH_SHORT).show();
     }
 
     @Override
