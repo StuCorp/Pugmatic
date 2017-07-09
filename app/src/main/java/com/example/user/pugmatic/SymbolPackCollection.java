@@ -11,8 +11,9 @@ public class SymbolPackCollection {
     FruitPack fruitPack = new FruitPack();
     EmojiFacePack facePack = new EmojiFacePack();
     EmojiClassicPack classicPack = new EmojiClassicPack();
+    WrestlerPack wrestlerPack = new WrestlerPack();
 
-    ArrayList<SymbolPack> pack = new ArrayList<>(Arrays.asList(fruitPack, facePack, classicPack));
+    ArrayList<SymbolPack> pack = new ArrayList<>(Arrays.asList(fruitPack, facePack, classicPack, wrestlerPack));
 
     public  ArrayList<SymbolPack> getPack() {
         return pack;
