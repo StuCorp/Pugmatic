@@ -9,9 +9,14 @@ import java.util.ArrayList;
 
 public abstract class SymbolPack  {
     ArrayList<Symbol> pack;
+    private String name;
 
 
     public ArrayList<Symbol> getPack() {
         return pack;
+    }
+
+    public String getName() {
+        return name;
     }
 }

@@ -24,4 +24,8 @@ public class Player {
     public void removeMoney(int bettingMoney) {
         this.money -= bettingMoney;
     }
+
+    public boolean hasMoney() {
+        return this.money>0;
+    }
 }

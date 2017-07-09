@@ -21,6 +21,15 @@ public class WheelSet {
         this.wheels = new ArrayList<>(Arrays.asList((Wheel) wheel1, wheel2, wheel3));
     }
 
+    public WheelSet(int symbolPackChoice, int wheelNum){
+        SymbolPackCollection symbolPackCollection = new SymbolPackCollection();
+        SymbolPack symbolPack = symbolPackCollection.getPack().get(symbolPackChoice);
+        wheel1 = new Wheel(symbolPack);
+        wheel2 = new Wheel(symbolPack);
+        wheel3 = new Wheel(symbolPack);
+        this.wheels = new ArrayList<>(Arrays.asList((Wheel) wheel1, wheel2, wheel3));
+    }
+
     public ArrayList<Wheel> getWheels() {
         return wheels;
     }

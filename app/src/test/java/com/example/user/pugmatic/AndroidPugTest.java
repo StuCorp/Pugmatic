@@ -41,4 +41,12 @@ public class AndroidPugTest {
         wheels.get(2).setFruitAtZeroIndex(fruitPack.bar);
         assertEquals(true, machine.checkForWin());
     }
+
+    @Test
+    public void testSymbolCollection(){
+
+        SymbolPackCollection symbpk = new SymbolPackCollection();
+
+        assertEquals("fruitpack", symbpk.getNames());
+    }
 }

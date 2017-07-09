@@ -14,6 +14,8 @@ public class FruitPack extends SymbolPack {
     Symbol bar;
     Symbol eggplant;
 
+    String name = "FruitPack";
+
     public FruitPack(){
         cherry = new Symbol("cherry", 10, R.drawable.cherry);
         seven = new Symbol("seven", 7, R.drawable.seven);
@@ -26,4 +28,11 @@ public class FruitPack extends SymbolPack {
     public ArrayList<Symbol> getPack() {
         return pack;
     }
+
+    @Override
+    public String getName(){
+        return this.name;
+    }
+
+
 }

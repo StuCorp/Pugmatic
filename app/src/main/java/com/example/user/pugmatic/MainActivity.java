@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
         Player player = new Player(userMoney);
         FruitPack fruitPack = new FruitPack();
         HatPack hatPack = new HatPack();
-        WheelSet wheelSet = new WheelSet(fruitPack, wheelsNum);
+        WheelSet wheelSet = new WheelSet(packChoice, wheelsNum);
         Machine machine = new Machine(wheelSet);
         Viewer viewer = new Viewer(player, machine);
         game = new Game(player, machine, viewer);
@@ -107,6 +107,7 @@ public class MainActivity extends Activity {
 
     public void whenAddMoneyClicked(View view) {
         Log.d("Pugmatic", "money added");
+        if(game.player.hasMoney())
         game.addMoney(1);
         refreshDisplay();
 

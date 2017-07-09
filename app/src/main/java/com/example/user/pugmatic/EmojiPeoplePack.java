@@ -6,5 +6,12 @@ package com.example.user.pugmatic;
 
 public class EmojiPeoplePack extends SymbolPack {
 
+    String name = "EmojiPeoplePack";
+
+    @Override
+    public String getName(){
+        return this.name;
+    }
+
 
 }

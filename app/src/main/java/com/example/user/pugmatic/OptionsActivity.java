@@ -35,9 +35,10 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
         setContentView(R.layout.activity_options);
 
         //create options for spinner based on pack names
-        availablePacks = new ArrayList<>();
-        availablePacks.add("FruitPack");
-        availablePacks.add("EmojiPeoplePack");
+        availablePacks = new SymbolPackCollection().getNames();
+//
+//        availablePacks.add("FruitPack");
+//        availablePacks.add("EmojiPeoplePack");
 
         //SYMBOLPACK SPINNER
         //find the spinner view and assign to variable
