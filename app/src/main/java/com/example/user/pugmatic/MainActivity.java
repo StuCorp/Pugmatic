@@ -126,6 +126,7 @@ public class MainActivity extends Activity {
             refreshDisplay();
             if (game.machine.checkForWin()) {
                 game.winScenario();
+                refreshDisplay();
             }
         }
     }
@@ -137,6 +138,7 @@ public class MainActivity extends Activity {
             refreshDisplay();
             if (game.machine.checkForWin()) {
                 game.winScenario();
+                refreshDisplay();
             }
         }
     }
@@ -149,6 +151,8 @@ public class MainActivity extends Activity {
             refreshDisplay();
             if (game.machine.checkForWin()) {
                 game.winScenario();
+                refreshDisplay();
+
             }
         }
     }
