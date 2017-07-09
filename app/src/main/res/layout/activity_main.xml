@@ -261,11 +261,11 @@
         app:layout_constraintTop_toBottomOf="@+id/winnings_display" />
 
     <Button
-        android:id="@+id/quit_button"
+        android:id="@+id/return_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="quit"
+        android:text="return"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spin_button" />
