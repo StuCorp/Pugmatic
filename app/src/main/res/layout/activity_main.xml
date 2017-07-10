@@ -254,10 +254,33 @@
         android:onClick="whenHold3Clicked"
         android:text="hold"
         app:layout_constraintLeft_toRightOf="@+id/hold2"
-        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/hold4"
         app:layout_constraintTop_toBottomOf="@+id/nudge3"
-
         />
+
+    <Button
+        android:id="@+id/hold4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="whenHold4Clicked"
+        android:text="hold"
+        app:layout_constraintLeft_toRightOf="@+id/hold3"
+        app:layout_constraintRight_toLeftOf="@+id/hold5"
+        app:layout_constraintTop_toBottomOf="@+id/nudge4"
+        />
+
+    <Button
+        android:id="@+id/hold5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="whenHold5Clicked"
+        android:text="hold"
+        app:layout_constraintLeft_toRightOf="@+id/hold4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nudge5"
+        />
+
+
 
     <TextView
         android:id="@+id/nudge_display"

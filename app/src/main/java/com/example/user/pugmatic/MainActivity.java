@@ -41,6 +41,10 @@ public class MainActivity extends Activity {
     Button hold1;
     Button hold2;
     Button hold3;
+    Button hold4;
+    Button hold5;
+
+
     TextView nudgeDisplay;
     TextView holdDisplay;
     TextView winningsDisplay;
@@ -125,12 +129,15 @@ public class MainActivity extends Activity {
         //extra nudges
         nudge4 = (Button) findViewById(R.id.nudge4);
         nudge5 = (Button) findViewById(R.id.nudge5);
-//        nudge4.setVisibility(View.GONE);
-//        nudge5.setVisibility(View.GONE);
 
         hold1 = (Button) findViewById(R.id.hold1);
         hold2 = (Button) findViewById(R.id.hold2);
         hold3 = (Button) findViewById(R.id.hold3);
+
+        //extra holds
+        hold4 = (Button) findViewById(R.id.hold4);
+        hold5 = (Button) findViewById(R.id.hold5);
+
 
         nudgeDisplay = (TextView) findViewById(R.id.nudge_display);
         holdDisplay = (TextView) findViewById(R.id.hold_display);
@@ -298,6 +305,30 @@ public class MainActivity extends Activity {
         refreshDisplay();
     }
 
+    public void whenHold4Clicked(View view) {
+        Log.d("Pugmatic", "hold4 clicked");
+        if (game.machine.getWheels().get(3).isHoldOn()) {
+            game.machine.getWheels().get(3).setHoldOnOff();
+            game.machine.addHold();
+        } else if (game.isHolds()) {
+            game.machine.getWheels().get(3).setHoldOnOn();
+            game.machine.deductHold();
+        }
+        refreshDisplay();
+    }
+
+    public void whenHold5Clicked(View view) {
+        Log.d("Pugmatic", "hold5 clicked");
+        if (game.machine.getWheels().get(4).isHoldOn()) {
+            game.machine.getWheels().get(4).setHoldOnOff();
+            game.machine.addHold();
+        } else if (game.isHolds()) {
+            game.machine.getWheels().get(4).setHoldOnOn();
+            game.machine.deductHold();
+        }
+        refreshDisplay();
+    }
+
 
     public void refreshDisplay() {
 
@@ -329,6 +360,9 @@ public class MainActivity extends Activity {
 
             nudge4.setVisibility(View.GONE);
             nudge5.setVisibility(View.GONE);
+
+            hold4.setVisibility(View.GONE);
+            hold5.setVisibility(View.GONE);
         }
 
         nudgeDisplay.setText("Nudges: " + game.machine.getNudges().toString());
