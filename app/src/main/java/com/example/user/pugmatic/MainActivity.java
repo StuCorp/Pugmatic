@@ -240,6 +240,7 @@ public class MainActivity extends Activity {
 
 
     public void refreshDisplay() {
+
         wheel1RowTop.setImageResource(game.getWheels().get(0).getLastFruit().getImage());
         wheel2RowTop.setImageResource(game.getWheels().get(1).getLastFruit().getImage());
         wheel3RowTop.setImageResource(game.getWheels().get(2).getLastFruit().getImage());

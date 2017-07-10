@@ -32,12 +32,17 @@ public class WheelSet {
         SymbolPackCollection symbolPackCollection = new SymbolPackCollection();
         SymbolPack symbolPack = symbolPackCollection.getPack().get(symbolPackChoice);
        this.symbolPack = symbolPack;
+        this.wheels = new ArrayList<>();
 
-
-        wheel1 = new Wheel(symbolPack);
-        wheel2 = new Wheel(symbolPack);
-        wheel3 = new Wheel(symbolPack);
-        this.wheels = new ArrayList<>(Arrays.asList((Wheel) wheel1, wheel2, wheel3));
+        for (int times = wheelNum; times > 0; times--){
+            Wheel wheel = new Wheel(symbolPack);
+            wheels.add(wheel);
+        }
+//
+//        wheel1 = new Wheel(symbolPack);
+//        wheel2 = new Wheel(symbolPack);
+//        wheel3 = new Wheel(symbolPack);
+//        this.wheels = new ArrayList<>(Arrays.asList((Wheel) wheel1, wheel2, wheel3));
     }
 
     public ArrayList<Wheel> getWheels() {
