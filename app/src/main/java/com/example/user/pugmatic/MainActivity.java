@@ -2,12 +2,14 @@ package com.example.user.pugmatic;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -54,9 +56,18 @@ public class MainActivity extends Activity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        packChoice = extras.getInt("pack");
-        wheelsNum = extras.getInt("wheelsNum");
-        userMoney = extras.getInt("walletMoney");
+        if (extras.getBoolean("resume")){
+//            change orientation
+//            this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+            packChoice = SharedPreferencesGameState.getStoredInt(this, "symbolPackChoice");
+            wheelsNum = SharedPreferencesGameState.getStoredInt(this,"wheelsNum");
+            userMoney = SharedPreferencesGameState.getStoredInt(this, "userMoney");
+        } else {
+            packChoice = extras.getInt("pack");
+            wheelsNum = extras.getInt("wheelsNum");
+            userMoney = extras.getInt("walletMoney");
+        }
 
         Player player = new Player(userMoney);
         FruitPack fruitPack = new FruitPack();
@@ -98,17 +109,37 @@ public class MainActivity extends Activity {
 
         addMoney = (Button) findViewById(R.id.add_money_button);
         spin = (Button) findViewById(R.id.spin_button);
-        quit = (Button) findViewById(R.id.quit_button);
+        quit = (Button) findViewById(R.id.return_button);
 
         refreshDisplay();
 
-//        game.run();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        int userMoney = game.player.getMoneyAmount();
+        int machineCredit = game.machine.getUserMoney();
+        int userWinnings = game.machine.getPayOutTracker();
+        int symbolPackChoice = game.machine.getPackNum();
+        int wheelsNum = game.machine.getWheelsNum();
+        SharedPreferencesGameState.setStoredInt(this, "userMoney", userMoney );
+        SharedPreferencesGameState.setStoredInt(this, "machineCredit", machineCredit );
+        SharedPreferencesGameState.setStoredInt(this, "userWinnings", userWinnings );
+        SharedPreferencesGameState.setStoredInt(this, "symbolPackChoice", symbolPackChoice );
+        SharedPreferencesGameState.setStoredInt(this, "wheelsNum", wheelsNum);
+//        int winnings = SharedPreferencesGameState.getStoredInt(this, "userWinnings");
+
     }
 
     public void whenAddMoneyClicked(View view) {
         Log.d("Pugmatic", "money added");
-        if(game.player.hasMoney())
-        game.addMoney(1);
+        if(game.player.hasMoney()) {
+            game.addMoney(1);
+        }
+        else{
+            Toast.makeText(this, "you have no money in your wallet", Toast.LENGTH_SHORT ).show();
+        }
         refreshDisplay();
 
     }
@@ -226,6 +257,11 @@ public class MainActivity extends Activity {
         walletDisplay.setText("Wallet: " + game.player.getMoneyAmount().toString());
         textBar.setText(textMessage);
 
+    }
+
+    public void whenOptionsButtonClicked(View view){
+        Intent intent = new Intent(this, OptionsActivity.class);
+        startActivity(intent);
     }
 
 

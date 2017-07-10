@@ -4,4 +4,5 @@
     <string name="choose_wheel">Wheel mode</string>
     <string name="choose_user_money">Set wallet amount</string>
     <string name="submitOptions">play</string>
+    <string name="resume_button">resume game</string>
 </resources>

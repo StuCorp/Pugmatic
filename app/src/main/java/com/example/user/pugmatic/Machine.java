@@ -198,4 +198,12 @@ public class Machine {
     public void addHold() {
         this.holds++;
     }
+
+    public int getPackNum(){
+        return wheelSet.getPackNum();
+    }
+
+    public int getWheelsNum(){
+        return wheelSet.getNumOfWheels();
+    }
 }

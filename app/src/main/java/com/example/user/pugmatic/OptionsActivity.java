@@ -28,6 +28,7 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
     NumberPicker moneyPicker;
     int moneyAmount = 1;
     Button submitOptions;
+    boolean resume = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,8 +103,8 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
         TextView choice = (TextView) view;
         //get string from textview
         spinnerChoice = arrayIndex;
-        String packChoice = choice.getText().toString();
-        Toast.makeText(this, "You selected " + packChoice, Toast.LENGTH_SHORT).show();
+//        String packChoice = choice.getText().toString();
+//        Toast.makeText(this, "You selected " + packChoice, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -112,10 +113,19 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
     }
 
     public void whenSubmitButtonClicked(View view){
+        this.resume = false;
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("resume", resume);
         intent.putExtra("pack", spinnerChoice);
         intent.putExtra("wheelsNum", wheelChoice);
         intent.putExtra("walletMoney", moneyAmount);
+        startActivity(intent);
+    }
+
+    public void whenResumeButtonClicked(View view){
+        this.resume = true;
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("resume", resume);
         startActivity(intent);
     }
 
