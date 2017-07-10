@@ -80,15 +80,23 @@ public class Machine {
     }
 
     public boolean checkForWin() {
-        if ((wheels.get(0).getCurrentFruit().getName()
-                .equals(wheels.get(1).getCurrentFruit().getName())) &&
-                (wheels.get(0).getCurrentFruit().getName()
-                        .equals(wheels.get(2).getCurrentFruit().getName()))) {
-            return true;
-        } else {
-            return false;
+        String symbolToMatch = wheels.get(0).getCurrentFruit().getName();
+        for (Wheel wheel : wheels) {
+            if (!symbolToMatch.equals(wheel.getCurrentFruit().getName())) {
+                return false;
+            }
         }
+        return true;
     }
+//        if ((wheels.get(0).getCurrentFruit().getName()
+//                .equals(wheels.get(1).getCurrentFruit().getName())) &&
+//                (wheels.get(0).getCurrentFruit().getName()
+//                        .equals(wheels.get(2).getCurrentFruit().getName()))) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+
 
     public void hold(ArrayList<Integer> wheelsToBeHeld) {
         ArrayList<Integer> allWheels = new ArrayList<>(Arrays.asList(0, 1, 2));

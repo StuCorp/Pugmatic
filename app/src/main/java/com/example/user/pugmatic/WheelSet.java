@@ -32,6 +32,8 @@ public class WheelSet {
         SymbolPackCollection symbolPackCollection = new SymbolPackCollection();
         SymbolPack symbolPack = symbolPackCollection.getPack().get(symbolPackChoice);
        this.symbolPack = symbolPack;
+
+
         wheel1 = new Wheel(symbolPack);
         wheel2 = new Wheel(symbolPack);
         wheel3 = new Wheel(symbolPack);
