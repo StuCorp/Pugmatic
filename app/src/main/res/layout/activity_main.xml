@@ -24,8 +24,8 @@
 
     <ImageView
         android:id="@+id/wheel1_row_top"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/wheel2_row_top"
@@ -33,8 +33,8 @@
 
     <ImageView
         android:id="@+id/wheel2_row_top"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel1_row_top"
         app:layout_constraintRight_toLeftOf="@+id/wheel3_row_top"
@@ -42,18 +42,36 @@
 
     <ImageView
         android:id="@+id/wheel3_row_top"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel2_row_top"
+        app:layout_constraintRight_toLeftOf="@+id/wheel4_row_top"
+        app:layout_constraintTop_toBottomOf="@+id/text_bar" />
+
+    <ImageView
+        android:id="@+id/wheel4_row_top"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
+        android:background="@android:drawable/star_big_on"
+        app:layout_constraintLeft_toRightOf="@+id/wheel3_row_top"
+        app:layout_constraintRight_toLeftOf="@+id/wheel5_row_top"
+        app:layout_constraintTop_toBottomOf="@+id/text_bar" />
+
+    <ImageView
+        android:id="@+id/wheel5_row_top"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
+        android:background="@android:drawable/star_big_on"
+        app:layout_constraintLeft_toRightOf="@+id/wheel4_row_top"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_bar" />
 
 
     <ImageView
         android:id="@+id/wheel1_row_mid"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/wheel2_row_mid"
@@ -61,8 +79,8 @@
 
     <ImageView
         android:id="@+id/wheel2_row_mid"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel1_row_mid"
         app:layout_constraintRight_toLeftOf="@+id/wheel3_row_mid"
@@ -72,19 +90,38 @@
 
     <ImageView
         android:id="@+id/wheel3_row_mid"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel2_row_mid"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/wheel4_row_mid"
         app:layout_constraintTop_toBottomOf="@+id/wheel3_row_top"
+        />
 
+    <ImageView
+        android:id="@+id/wheel4_row_mid"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
+        android:background="@android:drawable/star_big_on"
+        app:layout_constraintLeft_toRightOf="@+id/wheel3_row_mid"
+        app:layout_constraintRight_toLeftOf="@+id/wheel5_row_mid"
+        app:layout_constraintTop_toBottomOf="@+id/wheel4_row_top"
+        />
+
+    <ImageView
+        android:id="@+id/wheel5_row_mid"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
+        android:background="@android:drawable/star_big_on"
+        app:layout_constraintLeft_toRightOf="@+id/wheel4_row_mid"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheel5_row_top"
         />
 
     <ImageView
         android:id="@+id/wheel1_row_bot"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/wheel2_row_bot"
@@ -92,8 +129,8 @@
 
     <ImageView
         android:id="@+id/wheel2_row_bot"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel1_row_bot"
         app:layout_constraintRight_toLeftOf="@+id/wheel3_row_bot"
@@ -103,14 +140,34 @@
 
     <ImageView
         android:id="@+id/wheel3_row_bot"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
         android:background="@android:drawable/star_big_on"
         app:layout_constraintLeft_toRightOf="@+id/wheel2_row_bot"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/wheel4_row_bot"
         app:layout_constraintTop_toBottomOf="@+id/wheel3_row_mid"
-
         />
+
+    <ImageView
+        android:id="@+id/wheel4_row_bot"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
+        android:background="@android:drawable/star_big_on"
+        app:layout_constraintLeft_toRightOf="@+id/wheel3_row_bot"
+        app:layout_constraintRight_toLeftOf="@+id/wheel5_row_bot"
+        app:layout_constraintTop_toBottomOf="@+id/wheel4_row_mid"
+        />
+
+    <ImageView
+        android:id="@+id/wheel5_row_bot"
+        android:layout_width="@dimen/symbol_size_land"
+        android:layout_height="@dimen/symbol_size_land"
+        android:background="@android:drawable/star_big_on"
+        app:layout_constraintLeft_toRightOf="@+id/wheel4_row_bot"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheel5_row_mid"
+        />
+
 
     <Button
         android:id="@+id/nudge1"

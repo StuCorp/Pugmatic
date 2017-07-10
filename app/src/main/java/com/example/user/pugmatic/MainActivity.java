@@ -23,6 +23,15 @@ public class MainActivity extends Activity {
     ImageView wheel1RowBot;
     ImageView wheel2RowBot;
     ImageView wheel3RowBot;
+
+    ImageView wheel4RowTop;
+    ImageView wheel5RowTop;
+    ImageView wheel4RowMid;
+    ImageView wheel5RowMid;
+    ImageView wheel4RowBot;
+    ImageView wheel5RowBot;
+
+
     Button nudge1;
     Button nudge2;
     Button nudge3;
@@ -37,6 +46,7 @@ public class MainActivity extends Activity {
     Button addMoney;
     Button spin;
     Button quit;
+    int wheelsNum;
 
     Game game;
     String textMessage = "default";
@@ -50,23 +60,27 @@ public class MainActivity extends Activity {
 
 //game setup
         int packChoice;
-        int wheelsNum;
         int userMoney;
 
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        if (extras.getBoolean("resume")){
-//            change orientation
-//            this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        if (extras.getBoolean("resume")) {
 
             packChoice = SharedPreferencesGameState.getStoredInt(this, "symbolPackChoice");
-            wheelsNum = SharedPreferencesGameState.getStoredInt(this,"wheelsNum");
+            wheelsNum = SharedPreferencesGameState.getStoredInt(this, "wheelsNum");
             userMoney = SharedPreferencesGameState.getStoredInt(this, "userMoney");
+
         } else {
             packChoice = extras.getInt("pack");
             wheelsNum = extras.getInt("wheelsNum");
             userMoney = extras.getInt("walletMoney");
+        }
+
+        if (wheelsNum > 3) {
+            this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
         }
 
         Player player = new Player(userMoney);
@@ -91,6 +105,14 @@ public class MainActivity extends Activity {
         wheel1RowBot = (ImageView) findViewById(R.id.wheel1_row_bot);
         wheel2RowBot = (ImageView) findViewById(R.id.wheel2_row_bot);
         wheel3RowBot = (ImageView) findViewById(R.id.wheel3_row_bot);
+
+        //extra wheels
+        wheel4RowTop = (ImageView) findViewById(R.id.wheel4_row_top);
+        wheel5RowTop = (ImageView) findViewById(R.id.wheel5_row_top);
+        wheel4RowMid = (ImageView) findViewById(R.id.wheel4_row_mid);
+        wheel5RowMid = (ImageView) findViewById(R.id.wheel5_row_mid);
+        wheel4RowBot = (ImageView) findViewById(R.id.wheel4_row_bot);
+        wheel5RowBot = (ImageView) findViewById(R.id.wheel5_row_bot);
 
         //nudge and hold buttons
         nudge1 = (Button) findViewById(R.id.nudge1);
@@ -123,10 +145,10 @@ public class MainActivity extends Activity {
         int userWinnings = game.machine.getPayOutTracker();
         int symbolPackChoice = game.machine.getPackNum();
         int wheelsNum = game.machine.getWheelsNum();
-        SharedPreferencesGameState.setStoredInt(this, "userMoney", userMoney );
-        SharedPreferencesGameState.setStoredInt(this, "machineCredit", machineCredit );
-        SharedPreferencesGameState.setStoredInt(this, "userWinnings", userWinnings );
-        SharedPreferencesGameState.setStoredInt(this, "symbolPackChoice", symbolPackChoice );
+        SharedPreferencesGameState.setStoredInt(this, "userMoney", userMoney);
+        SharedPreferencesGameState.setStoredInt(this, "machineCredit", machineCredit);
+        SharedPreferencesGameState.setStoredInt(this, "userWinnings", userWinnings);
+        SharedPreferencesGameState.setStoredInt(this, "symbolPackChoice", symbolPackChoice);
         SharedPreferencesGameState.setStoredInt(this, "wheelsNum", wheelsNum);
 //        int winnings = SharedPreferencesGameState.getStoredInt(this, "userWinnings");
 
@@ -134,11 +156,10 @@ public class MainActivity extends Activity {
 
     public void whenAddMoneyClicked(View view) {
         Log.d("Pugmatic", "money added");
-        if(game.player.hasMoney()) {
+        if (game.player.hasMoney()) {
             game.addMoney(1);
-        }
-        else{
-            Toast.makeText(this, "you have no money in your wallet", Toast.LENGTH_SHORT ).show();
+        } else {
+            Toast.makeText(this, "you have no money in your wallet", Toast.LENGTH_SHORT).show();
         }
         refreshDisplay();
 
@@ -251,6 +272,22 @@ public class MainActivity extends Activity {
         wheel2RowBot.setImageResource(game.getWheels().get(1).getNextFruit().getImage());
         wheel3RowBot.setImageResource(game.getWheels().get(2).getNextFruit().getImage());
 
+        if (wheelsNum > 3) {
+            wheel4RowTop.setImageResource(game.getWheels().get(3).getLastFruit().getImage());
+            wheel5RowTop.setImageResource(game.getWheels().get(4).getLastFruit().getImage());
+            wheel4RowMid.setImageResource(game.getWheels().get(3).getCurrentFruit().getImage());
+            wheel5RowMid.setImageResource(game.getWheels().get(4).getCurrentFruit().getImage());
+            wheel4RowBot.setImageResource(game.getWheels().get(3).getNextFruit().getImage());
+            wheel5RowBot.setImageResource(game.getWheels().get(4).getNextFruit().getImage());
+        } else {
+            wheel4RowTop.setVisibility(View.GONE);
+            wheel5RowTop.setVisibility(View.GONE);
+            wheel4RowMid.setVisibility(View.GONE);
+            wheel5RowMid.setVisibility(View.GONE);
+            wheel4RowBot.setVisibility(View.GONE);
+            wheel5RowBot.setVisibility(View.GONE);
+        }
+
         nudgeDisplay.setText("Nudges: " + game.machine.getNudges().toString());
         holdDisplay.setText("Holds: " + game.machine.getHoldsNum().toString());
         creditDisplay.setText("Credits: " + game.machine.getUserMoney().toString());
@@ -260,7 +297,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void whenOptionsButtonClicked(View view){
+    public void whenOptionsButtonClicked(View view) {
         Intent intent = new Intent(this, OptionsActivity.class);
         startActivity(intent);
     }
