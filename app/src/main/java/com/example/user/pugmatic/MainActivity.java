@@ -35,6 +35,9 @@ public class MainActivity extends Activity {
     Button nudge1;
     Button nudge2;
     Button nudge3;
+    Button nudge4;
+    Button nudge5;
+
     Button hold1;
     Button hold2;
     Button hold3;
@@ -118,6 +121,13 @@ public class MainActivity extends Activity {
         nudge1 = (Button) findViewById(R.id.nudge1);
         nudge2 = (Button) findViewById(R.id.nudge2);
         nudge3 = (Button) findViewById(R.id.nudge3);
+
+        //extra nudges
+        nudge4 = (Button) findViewById(R.id.nudge4);
+        nudge5 = (Button) findViewById(R.id.nudge5);
+//        nudge4.setVisibility(View.GONE);
+//        nudge5.setVisibility(View.GONE);
+
         hold1 = (Button) findViewById(R.id.hold1);
         hold2 = (Button) findViewById(R.id.hold2);
         hold3 = (Button) findViewById(R.id.hold3);
@@ -210,7 +220,7 @@ public class MainActivity extends Activity {
 
 
     public void whenNudge3Clicked(View view) {
-        Log.d("Pugmatic", "nudge2 clicked");
+        Log.d("Pugmatic", "nudge3 clicked");
         if (game.isNudges()) {
             game.doNudge(2);
             refreshDisplay();
@@ -221,6 +231,35 @@ public class MainActivity extends Activity {
             }
         }
     }
+
+
+    public void whenNudge4Clicked(View view) {
+        Log.d("Pugmatic", "nudge4 clicked");
+        if (game.isNudges()) {
+            game.doNudge(3);
+            refreshDisplay();
+            if (game.machine.checkForWin()) {
+                game.winScenario();
+                refreshDisplay();
+
+            }
+        }
+    }
+
+
+    public void whenNudge5Clicked(View view) {
+        Log.d("Pugmatic", "nudge2 clicked");
+        if (game.isNudges()) {
+            game.doNudge(4);
+            refreshDisplay();
+            if (game.machine.checkForWin()) {
+                game.winScenario();
+                refreshDisplay();
+
+            }
+        }
+    }
+
 
 
     public void whenHold1Clicked(View view) {
@@ -279,6 +318,7 @@ public class MainActivity extends Activity {
             wheel5RowMid.setImageResource(game.getWheels().get(4).getCurrentFruit().getImage());
             wheel4RowBot.setImageResource(game.getWheels().get(3).getNextFruit().getImage());
             wheel5RowBot.setImageResource(game.getWheels().get(4).getNextFruit().getImage());
+
         } else {
             wheel4RowTop.setVisibility(View.GONE);
             wheel5RowTop.setVisibility(View.GONE);
@@ -286,6 +326,9 @@ public class MainActivity extends Activity {
             wheel5RowMid.setVisibility(View.GONE);
             wheel4RowBot.setVisibility(View.GONE);
             wheel5RowBot.setVisibility(View.GONE);
+
+            nudge4.setVisibility(View.GONE);
+            nudge5.setVisibility(View.GONE);
         }
 
         nudgeDisplay.setText("Nudges: " + game.machine.getNudges().toString());

@@ -187,7 +187,6 @@
         android:text="nudge"
         app:layout_constraintLeft_toRightOf="@+id/nudge1"
         app:layout_constraintRight_toLeftOf="@+id/nudge3"
-
         app:layout_constraintTop_toBottomOf="@+id/wheel2_row_bot" />
 
     <Button
@@ -198,7 +197,6 @@
         android:text="nudge"
         app:layout_constraintLeft_toRightOf="@+id/nudge2"
         app:layout_constraintRight_toRightOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/wheel3_row_bot" />
 
     <Button

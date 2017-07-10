@@ -188,7 +188,6 @@
         android:text="nudge"
         app:layout_constraintLeft_toRightOf="@+id/nudge1"
         app:layout_constraintRight_toLeftOf="@+id/nudge3"
-
         app:layout_constraintTop_toBottomOf="@+id/wheel2_row_bot" />
 
     <Button
@@ -198,9 +197,32 @@
         android:onClick="whenNudge3Clicked"
         android:text="nudge"
         app:layout_constraintLeft_toRightOf="@+id/nudge2"
-        app:layout_constraintRight_toRightOf="parent"
-
+        app:layout_constraintRight_toLeftOf="@+id/nudge4"
         app:layout_constraintTop_toBottomOf="@+id/wheel3_row_bot" />
+
+
+    <Button
+        android:id="@+id/nudge4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="whenNudge4Clicked"
+        android:text="nudge"
+        app:layout_constraintLeft_toRightOf="@+id/nudge3"
+        app:layout_constraintRight_toLeftOf="@+id/nudge5"
+        app:layout_constraintTop_toBottomOf="@+id/wheel4_row_bot" />
+
+
+    <Button
+        android:id="@+id/nudge5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="whenNudge5Clicked"
+        android:text="nudge"
+        app:layout_constraintLeft_toRightOf="@+id/nudge4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheel5_row_bot" />
+
+
 
     <Button
         android:id="@+id/hold1"
