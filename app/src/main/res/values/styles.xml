@@ -1,8 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme">
-        <!--parent="android:Theme.Holo.Light"-->
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
         <item name="android:navigationBarColor">@color/colorAccent</item>
         <item name="android:colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@android:color/background_light</item>

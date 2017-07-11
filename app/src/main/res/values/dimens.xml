@@ -2,5 +2,7 @@
 <resources>
     <dimen name="symbol_size">90dp</dimen>
     <dimen name="symbol_size_land">20dp</dimen>
+    <dimen name="option_image_size_width">150dp</dimen>
+    <dimen name="option_image_size_height">60dp</dimen>
 
 </resources>
