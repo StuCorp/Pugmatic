@@ -5,5 +5,8 @@
     <dimen name="option_image_size_width">150dp</dimen>
     <dimen name="option_image_size_height">60dp</dimen>
     <dimen name="option_menu_container_height">90dp</dimen>
+    <dimen name="nudge_width">60dp</dimen>
+    <dimen name="nudge_height">40dp</dimen>
+    <dimen name="light_flasher">30dp</dimen>
 
 </resources>
