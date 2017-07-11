@@ -516,9 +516,9 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -530,7 +530,7 @@
             android:background="@drawable/empty_circle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/circle2"
             app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -539,9 +539,43 @@
             android:layout_height="30dp"
             android:background="@drawable/empty_circle"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/circle1"
+            app:layout_constraintRight_toLeftOf="@+id/circle3"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/circle3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/empty_circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/circle2"
+            app:layout_constraintRight_toLeftOf="@+id/circle4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/circle4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/empty_circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/circle3"
+            app:layout_constraintRight_toLeftOf="@+id/circle5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/circle5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/empty_circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/circle4"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
 
     </android.support.constraint.ConstraintLayout>
 
