@@ -4,6 +4,9 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
+
         android:icon="@mipmap/pugmatic"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/pugmatic"

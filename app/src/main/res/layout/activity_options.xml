@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/pugmatic"
+    android:background="@color/transparetWhite"
 
     tools:context="com.example.user.pugmatic.OptionsActivity">
 
