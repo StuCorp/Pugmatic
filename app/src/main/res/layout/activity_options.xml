@@ -36,7 +36,7 @@
 
     <Spinner
         android:id="@+id/packs_spinner"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
@@ -56,16 +56,17 @@
 
     <Switch
         android:id="@+id/wheel_num_switch"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="3"
-        android:textOff="3"
-        android:textOn="5"
-        app:layout_constraintLeft_toRightOf="@+id/choose_wheel_num_text"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="16dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHighlight="@android:color/holo_blue_bright"
+        android:textColorHint="@android:color/holo_green_light"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintLeft_toRightOf="@+id/choose_wheel_num_text"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/packs_spinner" />
 
     <TextView
@@ -80,8 +81,8 @@
 
     <NumberPicker
         android:id="@+id/money_picker"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         app:layout_constraintLeft_toRightOf="@id/user_money_tv"
         app:layout_constraintRight_toRightOf="parent"

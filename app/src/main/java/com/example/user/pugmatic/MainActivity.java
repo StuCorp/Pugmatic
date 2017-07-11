@@ -6,10 +6,16 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.sql.Array;
+import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
@@ -58,10 +64,16 @@ public class MainActivity extends Activity {
     Game game;
     String textMessage = "default";
 
+//    ArrayList<Symbol> wheelOne;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
         setContentView(R.layout.activity_main);
 
 
@@ -150,6 +162,17 @@ public class MainActivity extends Activity {
         addMoney = (Button) findViewById(R.id.add_money_button);
         spin = (Button) findViewById(R.id.spin_button);
         quit = (Button) findViewById(R.id.return_button);
+
+//        wheelOne = new ArrayList<>();
+//        wheelOne.add(machine.getWheels().get(0).getLastFruit());
+//        wheelOne.add(machine.getWheels().get(0).getCurrentFruit());
+//        wheelOne.add(machine.getWheels().get(0).getNextFruit());
+//
+//        WheelListAdapter wheelListAdapter = new WheelListAdapter(this, wheelOne);
+//
+//        ListView listView = (ListView) findViewById(R.id.wheel1_listview);
+//        listView.setAdapter(wheelListAdapter);
+
 
         refreshDisplay();
 
@@ -332,6 +355,16 @@ public class MainActivity extends Activity {
 
 
     public void refreshDisplay() {
+
+//        wheelOne.clear();
+//        wheelOne.add(game.getWheels().get(0).getLastFruit());
+//        wheelOne.add(game.getWheels().get(0).getCurrentFruit());
+//        wheelOne.add(game.getWheels().get(0).getNextFruit());
+//
+//        WheelListAdapter wheelListAdapter = new WheelListAdapter(this, wheelOne);
+//
+//        ListView listView = (ListView) findViewById(R.id.wheel1_listview);
+//        listView.setAdapter(wheelListAdapter);
 
         wheel1RowTop.setImageResource(game.getWheels().get(0).getLastFruit().getImage());
         wheel2RowTop.setImageResource(game.getWheels().get(1).getLastFruit().getImage());
