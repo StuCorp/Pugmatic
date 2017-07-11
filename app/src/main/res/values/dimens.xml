@@ -4,5 +4,6 @@
     <dimen name="symbol_size_land">20dp</dimen>
     <dimen name="option_image_size_width">150dp</dimen>
     <dimen name="option_image_size_height">60dp</dimen>
+    <dimen name="option_menu_container_height">100dp</dimen>
 
 </resources>
