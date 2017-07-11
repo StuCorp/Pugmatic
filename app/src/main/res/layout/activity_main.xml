@@ -7,186 +7,231 @@
     tools:context="com.example.user.pugmatic.MainActivity">
 
 
-    <TextView
-        android:id="@+id/text_bar"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_title_container_main"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/pumatic_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:src="@mipmap/pugmatic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/pugmatic_text_image"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="100dp" />
+
+        <ImageView
+            android:id="@+id/pugmatic_text_image"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="100dp"
+            android:src="@drawable/pugmatic_text_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintLeft_toRightOf="@+id/pumatic_image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="100dp" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_readout_container"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Gamble your life away!"
-        android:textAlignment="center"
-        android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/constraint_image_container"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/constraint_title_container_main">
+
+
+        <TextView
+            android:id="@+id/text_bar"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Gamble your life away!"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraint_image_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/text_bar"
         app:layout_constraintBottom_toTopOf="@+id/constrain_button_container"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/constraint_readout_container">
 
-    <ImageView
-        android:id="@+id/wheel1_row_top"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/wheel2_row_top"
-        app:layout_constraintTop_toBottomOf="parent" />
+        <ImageView
+            android:id="@+id/wheel1_row_top"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@android:drawable/star_big_on"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/wheel2_row_top"
+            app:layout_constraintTop_toBottomOf="parent" />
 
-    <ImageView
-        android:id="@+id/wheel2_row_top"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:color/background_light"
-        app:layout_constraintLeft_toRightOf="@+id/wheel1_row_top"
-        app:layout_constraintRight_toLeftOf="@+id/wheel3_row_top"
-        app:layout_constraintTop_toBottomOf="parent" />
+        <ImageView
+            android:id="@+id/wheel2_row_top"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@android:color/background_light"
+            app:layout_constraintLeft_toRightOf="@+id/wheel1_row_top"
+            app:layout_constraintRight_toLeftOf="@+id/wheel3_row_top"
+            app:layout_constraintTop_toBottomOf="parent" />
 
-    <ImageView
-        android:id="@+id/wheel3_row_top"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        app:layout_constraintLeft_toRightOf="@+id/wheel2_row_top"
-        app:layout_constraintRight_toLeftOf="@+id/wheel4_row_top"
-        app:layout_constraintTop_toBottomOf="parent" />
+        <ImageView
+            android:id="@+id/wheel3_row_top"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@android:drawable/star_big_on"
+            app:layout_constraintLeft_toRightOf="@+id/wheel2_row_top"
+            app:layout_constraintRight_toLeftOf="@+id/wheel4_row_top"
+            app:layout_constraintTop_toBottomOf="parent" />
 
         <ImageView
             android:id="@+id/wheel4_row_top"
-            android:layout_width="@dimen/symbol_size"
-            android:layout_height="@dimen/symbol_size"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:background="@android:drawable/star_big_on"
             android:visibility="gone"
             app:layout_constraintLeft_toRightOf="@+id/wheel3_row_top"
             app:layout_constraintRight_toLeftOf="@+id/wheel5_row_top"
             app:layout_constraintTop_toBottomOf="parent" />
 
-    <ImageView
-        android:id="@+id/wheel5_row_top"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        android:visibility="gone"
+        <ImageView
+            android:id="@+id/wheel5_row_top"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:drawable/star_big_on"
+            android:visibility="gone"
 
-        app:layout_constraintLeft_toRightOf="@+id/wheel4_row_top"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
+            app:layout_constraintLeft_toRightOf="@+id/wheel4_row_top"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
 
 
-    <ImageView
-        android:id="@+id/wheel1_row_mid"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/wheel2_row_mid"
-        app:layout_constraintTop_toBottomOf="@+id/wheel1_row_top" />
+        <ImageView
+            android:id="@+id/wheel1_row_mid"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@android:drawable/star_big_on"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/wheel2_row_mid"
+            app:layout_constraintTop_toBottomOf="@+id/wheel1_row_top" />
 
-    <ImageView
-        android:id="@+id/wheel2_row_mid"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        app:layout_constraintLeft_toRightOf="@+id/wheel1_row_mid"
-        app:layout_constraintRight_toLeftOf="@+id/wheel3_row_mid"
-        app:layout_constraintTop_toBottomOf="@+id/wheel2_row_top" />
+        <ImageView
+            android:id="@+id/wheel2_row_mid"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@android:drawable/star_big_on"
+            app:layout_constraintLeft_toRightOf="@+id/wheel1_row_mid"
+            app:layout_constraintRight_toLeftOf="@+id/wheel3_row_mid"
+            app:layout_constraintTop_toBottomOf="@+id/wheel2_row_top" />
 
-    />
-
-    <ImageView
-        android:id="@+id/wheel3_row_mid"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        app:layout_constraintLeft_toRightOf="@+id/wheel2_row_mid"
-        app:layout_constraintRight_toLeftOf="@+id/wheel4_row_mid"
-        app:layout_constraintTop_toBottomOf="@+id/wheel3_row_top"
         />
 
-    <ImageView
-        android:id="@+id/wheel4_row_mid"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        android:visibility="gone"
+        <ImageView
+            android:id="@+id/wheel3_row_mid"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@android:drawable/star_big_on"
+            app:layout_constraintLeft_toRightOf="@+id/wheel2_row_mid"
+            app:layout_constraintRight_toLeftOf="@+id/wheel4_row_mid"
+            app:layout_constraintTop_toBottomOf="@+id/wheel3_row_top" />
 
-        app:layout_constraintLeft_toRightOf="@+id/wheel3_row_mid"
-        app:layout_constraintRight_toLeftOf="@+id/wheel5_row_mid"
-        app:layout_constraintTop_toBottomOf="@+id/wheel4_row_top"
+        <ImageView
+            android:id="@+id/wheel4_row_mid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:drawable/star_big_on"
+            android:visibility="gone"
+
+            app:layout_constraintLeft_toRightOf="@+id/wheel3_row_mid"
+            app:layout_constraintRight_toLeftOf="@+id/wheel5_row_mid"
+            app:layout_constraintTop_toBottomOf="@+id/wheel4_row_top" />
+
+        <ImageView
+            android:id="@+id/wheel5_row_mid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:drawable/star_big_on"
+            android:visibility="gone"
+
+            app:layout_constraintLeft_toRightOf="@+id/wheel4_row_mid"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wheel5_row_top" />
+
+        <ImageView
+            android:id="@+id/wheel1_row_bot"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@android:drawable/star_big_on"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/wheel2_row_bot"
+            app:layout_constraintTop_toBottomOf="@+id/wheel1_row_mid" />
+
+        <ImageView
+            android:id="@+id/wheel2_row_bot"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@android:drawable/star_big_on"
+            app:layout_constraintLeft_toRightOf="@+id/wheel1_row_bot"
+            app:layout_constraintRight_toLeftOf="@+id/wheel3_row_bot"
+            app:layout_constraintTop_toBottomOf="@+id/wheel2_row_mid" />
+
         />
 
-    <ImageView
-        android:id="@+id/wheel5_row_mid"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        android:visibility="gone"
+        <ImageView
+            android:id="@+id/wheel3_row_bot"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@android:drawable/star_big_on"
+            app:layout_constraintLeft_toRightOf="@+id/wheel2_row_bot"
+            app:layout_constraintRight_toLeftOf="@+id/wheel4_row_bot"
+            app:layout_constraintTop_toBottomOf="@+id/wheel3_row_mid" />
 
-        app:layout_constraintLeft_toRightOf="@+id/wheel4_row_mid"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wheel5_row_top"
-        />
+        <ImageView
+            android:id="@+id/wheel4_row_bot"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:drawable/star_big_on"
+            android:visibility="gone"
 
-    <ImageView
-        android:id="@+id/wheel1_row_bot"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/wheel2_row_bot"
-        app:layout_constraintTop_toBottomOf="@+id/wheel1_row_mid" />
+            app:layout_constraintLeft_toRightOf="@+id/wheel3_row_bot"
+            app:layout_constraintRight_toLeftOf="@+id/wheel5_row_bot"
+            app:layout_constraintTop_toBottomOf="@+id/wheel4_row_mid" />
 
-    <ImageView
-        android:id="@+id/wheel2_row_bot"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        app:layout_constraintLeft_toRightOf="@+id/wheel1_row_bot"
-        app:layout_constraintRight_toLeftOf="@+id/wheel3_row_bot"
-        app:layout_constraintTop_toBottomOf="@+id/wheel2_row_mid" />
+        <ImageView
+            android:id="@+id/wheel5_row_bot"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:drawable/star_big_on"
+            android:visibility="gone"
 
-    />
-
-    <ImageView
-        android:id="@+id/wheel3_row_bot"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        app:layout_constraintLeft_toRightOf="@+id/wheel2_row_bot"
-        app:layout_constraintRight_toLeftOf="@+id/wheel4_row_bot"
-        app:layout_constraintTop_toBottomOf="@+id/wheel3_row_mid"
-        />
-
-    <ImageView
-        android:id="@+id/wheel4_row_bot"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        android:visibility="gone"
-
-        app:layout_constraintLeft_toRightOf="@+id/wheel3_row_bot"
-        app:layout_constraintRight_toLeftOf="@+id/wheel5_row_bot"
-        app:layout_constraintTop_toBottomOf="@+id/wheel4_row_mid"
-        />
-
-    <ImageView
-        android:id="@+id/wheel5_row_bot"
-        android:layout_width="@dimen/symbol_size"
-        android:layout_height="@dimen/symbol_size"
-        android:background="@android:drawable/star_big_on"
-        android:visibility="gone"
-
-        app:layout_constraintLeft_toRightOf="@+id/wheel4_row_bot"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wheel5_row_mid"
-        />
+            app:layout_constraintLeft_toRightOf="@+id/wheel4_row_bot"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wheel5_row_mid" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -194,241 +239,239 @@
         android:id="@+id/constrain_button_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/constraint_image_container"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintVertical_bias="0.501"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent">
-
-
-    <Button
-        android:id="@+id/nudge1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenNudge1Clicked"
-        android:text="nudge"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/nudge2"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
-
-    <Button
-        android:id="@+id/nudge2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenNudge2Clicked"
-        android:text="nudge"
-        app:layout_constraintLeft_toRightOf="@+id/nudge1"
-        app:layout_constraintRight_toLeftOf="@+id/nudge3"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
-
-    <Button
-        android:id="@+id/nudge3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenNudge3Clicked"
-        android:text="nudge"
-        app:layout_constraintLeft_toRightOf="@+id/nudge2"
-        app:layout_constraintRight_toLeftOf="@+id/nudge4"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
-
-
-    <Button
-        android:id="@+id/nudge4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenNudge4Clicked"
-        android:text="nudge"
-        app:layout_constraintLeft_toRightOf="@+id/nudge3"
-        app:layout_constraintRight_toLeftOf="@+id/nudge5"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-
-    <Button
-        android:id="@+id/nudge5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenNudge5Clicked"
-        android:text="nudge"
-        app:layout_constraintLeft_toRightOf="@+id/nudge4"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
-
-
-
-    <Button
-        android:id="@+id/hold1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenHold1Clicked"
-        android:text="hold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/hold2"
-
-        app:layout_constraintTop_toBottomOf="@+id/nudge1" />
-
-    <Button
-        android:id="@+id/hold2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenHold2Clicked"
-        android:text="hold"
-        app:layout_constraintLeft_toRightOf="@+id/hold1"
-        app:layout_constraintRight_toLeftOf="@+id/hold3"
-        app:layout_constraintTop_toBottomOf="@+id/nudge2"
-
-        />
-
-    <Button
-        android:id="@+id/hold3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenHold3Clicked"
-        android:text="hold"
-        app:layout_constraintLeft_toRightOf="@+id/hold2"
-        app:layout_constraintRight_toLeftOf="@+id/hold4"
-        app:layout_constraintTop_toBottomOf="@+id/nudge3"
-        />
-
-    <Button
-        android:id="@+id/hold4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenHold4Clicked"
-        android:text="hold"
-        app:layout_constraintLeft_toRightOf="@+id/hold3"
-        app:layout_constraintRight_toLeftOf="@+id/hold5"
-        app:layout_constraintTop_toBottomOf="@+id/nudge4"
-        />
-
-    <Button
-        android:id="@+id/hold5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenHold5Clicked"
-        android:text="hold"
-        app:layout_constraintLeft_toRightOf="@+id/hold4"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nudge5"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/constraint_image_container"
+        app:layout_constraintVertical_bias="0.501"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
 
 
+        <Button
+            android:id="@+id/nudge1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenNudge1Clicked"
+            android:text="nudge"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/nudge2"
+            app:layout_constraintTop_toTopOf="parent"
 
-    <TextView
-        android:id="@+id/nudge_display"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:text="nudge count"
-        android:textSize="17dp"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/spin_button"
-        app:layout_constraintTop_toBottomOf="@+id/hold3"
-        android:layout_marginStart="30dp" />
+            />
 
-    <TextView
-        android:id="@+id/hold_display"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:text="hold count"
-        android:textSize="17dp"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/spin_button"
-        app:layout_constraintTop_toBottomOf="@+id/nudge_display"
-        android:layout_marginStart="30dp" />
+        <Button
+            android:id="@+id/nudge2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenNudge2Clicked"
+            android:text="nudge"
+            app:layout_constraintLeft_toRightOf="@+id/nudge1"
+            app:layout_constraintRight_toLeftOf="@+id/nudge3"
+            app:layout_constraintTop_toTopOf="parent"
 
+            />
 
-    <TextView
-        android:id="@+id/winnings_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="winnings: xx"
-        android:textSize="17dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hold_display" />
+        <Button
+            android:id="@+id/nudge3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenNudge3Clicked"
+            android:text="nudge"
+            app:layout_constraintLeft_toRightOf="@+id/nudge2"
+            app:layout_constraintRight_toLeftOf="@+id/nudge4"
+            app:layout_constraintTop_toTopOf="parent"
 
-
-    <TextView
-        android:id="@+id/credit_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="credit: xx"
-        android:textSize="17dp"
-        app:layout_constraintRight_toLeftOf="@+id/winnings_display"
-        app:layout_constraintTop_toBottomOf="@+id/hold_display" />
-
-    <TextView
-        android:id="@+id/wallet_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:text="wallet: xx"
-        android:textSize="17dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/credit_display"
-        app:layout_constraintTop_toBottomOf="@+id/hold_display"
-        android:layout_marginStart="30dp" />
+            />
 
 
+        <Button
+            android:id="@+id/nudge4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenNudge4Clicked"
+            android:text="nudge"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@+id/nudge3"
+            app:layout_constraintRight_toLeftOf="@+id/nudge5"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/add_money_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenAddMoneyClicked"
-        android:text="Add £1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/spin_button"
-        app:layout_constraintTop_toBottomOf="@+id/credit_display" />
+
+        <Button
+            android:id="@+id/nudge5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenNudge5Clicked"
+            android:text="nudge"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@+id/nudge4"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-    <Button
-        android:id="@+id/spin_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="whenSpinClicked"
-        android:text="spin"
-        app:layout_constraintLeft_toRightOf="@+id/add_money_button"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/winnings_display" />
+        <Button
+            android:id="@+id/hold1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenHold1Clicked"
+            android:text="hold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/hold2"
 
-    <Button
-        android:id="@+id/return_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="whenOptionsButtonClicked"
-        android:text="return"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spin_button" />
+            app:layout_constraintTop_toBottomOf="@+id/nudge1" />
+
+        <Button
+            android:id="@+id/hold2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenHold2Clicked"
+            android:text="hold"
+            app:layout_constraintLeft_toRightOf="@+id/hold1"
+            app:layout_constraintRight_toLeftOf="@+id/hold3"
+            app:layout_constraintTop_toBottomOf="@+id/nudge2"
+
+            />
+
+        <Button
+            android:id="@+id/hold3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenHold3Clicked"
+            android:text="hold"
+            app:layout_constraintLeft_toRightOf="@+id/hold2"
+            app:layout_constraintRight_toLeftOf="@+id/hold4"
+            app:layout_constraintTop_toBottomOf="@+id/nudge3" />
+
+        <Button
+            android:id="@+id/hold4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenHold4Clicked"
+            android:text="hold"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@+id/hold3"
+            app:layout_constraintRight_toLeftOf="@+id/hold5"
+            app:layout_constraintTop_toBottomOf="@+id/nudge4" />
+
+        <Button
+            android:id="@+id/hold5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenHold5Clicked"
+            android:text="hold"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@+id/hold4"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nudge5" />
+
+
+        <TextView
+            android:id="@+id/nudge_display"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:text="nudge count"
+            android:textSize="17dp"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/spin_button"
+            app:layout_constraintTop_toBottomOf="@+id/hold3" />
+
+        <TextView
+            android:id="@+id/hold_display"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:text="hold count"
+            android:textSize="17dp"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/spin_button"
+            app:layout_constraintTop_toBottomOf="@+id/nudge_display" />
+
+
+        <TextView
+            android:id="@+id/winnings_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="winnings: xx"
+            android:textSize="17dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hold_display" />
+
+
+        <TextView
+            android:id="@+id/credit_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="credit: xx"
+            android:textSize="17dp"
+            app:layout_constraintRight_toLeftOf="@+id/winnings_display"
+            app:layout_constraintTop_toBottomOf="@+id/hold_display" />
+
+        <TextView
+            android:id="@+id/wallet_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:text="wallet: xx"
+            android:textSize="17dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/credit_display"
+            app:layout_constraintTop_toBottomOf="@+id/hold_display" />
+
+
+        <Button
+            android:id="@+id/add_money_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenAddMoneyClicked"
+            android:text="Add £1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/spin_button"
+            app:layout_constraintTop_toBottomOf="@+id/credit_display" />
+
+
+        <Button
+            android:id="@+id/spin_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="whenSpinClicked"
+            android:text="spin"
+            app:layout_constraintLeft_toRightOf="@+id/add_money_button"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/winnings_display" />
+
+        <Button
+            android:id="@+id/return_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="whenOptionsButtonClicked"
+            android:text="return"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spin_button" />
 
     </android.support.constraint.ConstraintLayout>
 
     <!--<ListView-->
-        <!--android:id="@+id/wheel1_listview"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginLeft="0dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:visibility="gone"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--app:layout_constraintRight_toRightOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/return_button" />-->
+    <!--android:id="@+id/wheel1_listview"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="0dp"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:visibility="gone"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toRightOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/return_button" />-->
 
 
 </android.support.constraint.ConstraintLayout>
