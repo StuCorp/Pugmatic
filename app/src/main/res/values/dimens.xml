@@ -8,5 +8,6 @@
     <dimen name="nudge_width">60dp</dimen>
     <dimen name="nudge_height">40dp</dimen>
     <dimen name="light_flasher">30dp</dimen>
+    <dimen name="symbol_size_layout">40dp</dimen>
 
 </resources>
