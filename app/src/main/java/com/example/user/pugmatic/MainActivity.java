@@ -69,6 +69,11 @@ public class MainActivity extends Activity {
     int userMoney;
     MediaPlayer mp;
     MediaPlayer mpCoin;
+    MediaPlayer mpSpin;
+    MediaPlayer mpHold;
+    MediaPlayer mpNudge;
+    MediaPlayer mpReturn;
+
 
 
     Game game;
@@ -186,9 +191,14 @@ public class MainActivity extends Activity {
 //        ListView listView = (ListView) findViewById(R.id.wheel1_listview);
 //        listView.setAdapter(wheelListAdapter);
 
+
+//        media players
         mp = MediaPlayer.create(MainActivity.this, R.raw.fanfare);
         mpCoin = MediaPlayer.create(MainActivity.this, R.raw.coin);
-
+        mpSpin = MediaPlayer.create(MainActivity.this, R.raw.spin);
+        mpHold = MediaPlayer.create(MainActivity.this, R.raw.hold);
+        mpNudge = MediaPlayer.create(MainActivity.this, R.raw.nudge);
+        mpReturn = MediaPlayer.create(MainActivity.this, R.raw.returnbutton);
 
         refreshDisplay();
 
@@ -227,6 +237,7 @@ public class MainActivity extends Activity {
         Log.d("Pugmatic", "spin clikced");
         if (game.moneyInMachine()) {
             game.pull();
+            spinSound();
             Log.d("Pugmatic", "pull happening");
             refreshDisplay();
             if (game.machine.checkForWin()) {
@@ -246,6 +257,7 @@ public class MainActivity extends Activity {
         Log.d("Pugmatic", "nudge1 clicked");
         if (game.isNudges()) {
             game.doNudge(0);
+            nudgeSound();
             refreshDisplay();
             if (game.machine.checkForWin()) {
                 game.winScenario();
@@ -258,6 +270,7 @@ public class MainActivity extends Activity {
         Log.d("Pugmatic", "nudge2 clicked");
         if (game.isNudges()) {
             game.doNudge(1);
+            nudgeSound();
             refreshDisplay();
             if (game.machine.checkForWin()) {
                 game.winScenario();
@@ -271,6 +284,7 @@ public class MainActivity extends Activity {
         Log.d("Pugmatic", "nudge3 clicked");
         if (game.isNudges()) {
             game.doNudge(2);
+            nudgeSound();
             refreshDisplay();
             if (game.machine.checkForWin()) {
                 game.winScenario();
@@ -285,6 +299,7 @@ public class MainActivity extends Activity {
         Log.d("Pugmatic", "nudge4 clicked");
         if (game.isNudges()) {
             game.doNudge(3);
+            nudgeSound();
             refreshDisplay();
             if (game.machine.checkForWin()) {
                 game.winScenario();
@@ -299,6 +314,7 @@ public class MainActivity extends Activity {
         Log.d("Pugmatic", "nudge2 clicked");
         if (game.isNudges()) {
             game.doNudge(4);
+            nudgeSound();
             refreshDisplay();
             if (game.machine.checkForWin()) {
                 game.winScenario();
@@ -317,6 +333,7 @@ public class MainActivity extends Activity {
         } else if (game.isHolds()) {
             game.machine.getWheels().get(0).setHoldOnOn();
             game.machine.deductHold();
+            holdSound();
         }
         refreshDisplay();
     }
@@ -329,6 +346,7 @@ public class MainActivity extends Activity {
         } else if (game.isHolds()) {
             game.machine.getWheels().get(1).setHoldOnOn();
             game.machine.deductHold();
+            holdSound();
         }
         refreshDisplay();
     }
@@ -341,6 +359,7 @@ public class MainActivity extends Activity {
         } else if (game.isHolds()) {
             game.machine.getWheels().get(2).setHoldOnOn();
             game.machine.deductHold();
+            holdSound();
         }
         refreshDisplay();
     }
@@ -353,6 +372,7 @@ public class MainActivity extends Activity {
         } else if (game.isHolds()) {
             game.machine.getWheels().get(3).setHoldOnOn();
             game.machine.deductHold();
+            holdSound();
         }
         refreshDisplay();
     }
@@ -365,6 +385,7 @@ public class MainActivity extends Activity {
         } else if (game.isHolds()) {
             game.machine.getWheels().get(4).setHoldOnOn();
             game.machine.deductHold();
+            holdSound();
         }
         refreshDisplay();
     }
@@ -459,7 +480,27 @@ public class MainActivity extends Activity {
         mpCoin.start();
     }
 
+    public void spinSound(){
+        mpSpin.start();
+    }
+
+    public void holdSound(){
+        mpHold.start();
+    }
+
+
+    public void nudgeSound(){
+        mpNudge.start();
+    }
+
+    public void returnSound(){
+        mpReturn.start();
+    }
+
+
+
     public void whenOptionsButtonClicked(View view) {
+        returnSound();
         boolean previousSelection = true;
         Intent intent = new Intent(this, OptionsActivity.class);
         intent.putExtra("previous", previousSelection);
