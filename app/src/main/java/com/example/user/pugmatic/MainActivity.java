@@ -64,6 +64,8 @@ public class MainActivity extends Activity {
     Button spin;
     Button quit;
     int wheelsNum;
+    int packChoice;
+    int userMoney;
 
     Game game;
     String textMessage = "default";
@@ -82,8 +84,7 @@ public class MainActivity extends Activity {
 
 
 //game setup
-        int packChoice;
-        int userMoney;
+
 
 
         Intent intent = getIntent();
@@ -440,10 +441,14 @@ public class MainActivity extends Activity {
     }
 
     public void whenOptionsButtonClicked(View view) {
+        boolean previousSelection = true;
         Intent intent = new Intent(this, OptionsActivity.class);
+        intent.putExtra("previous", previousSelection);
+        intent.putExtra("pack", packChoice);
+        intent.putExtra("wheelsNum", wheelsNum);
+        intent.putExtra("walletMoney", userMoney);
         startActivity(intent);
     }
-
 
 }
 

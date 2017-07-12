@@ -175,14 +175,30 @@ public class Machine {
         int nudgeAmount = rand.nextInt(3);
         nudges = nudgeAmount;
     }
+public void calculateHolds(){
+    if (wheelSet.getNumOfWheels()==3){
+        calculateHolds3Set();
+    } else {
+        calculateHolds5Set();
+    }
+}
 
-    public void calculateHolds() {
+    public void calculateHolds3Set() {
         Random rand = new Random();
         int holdAmount = 0;
         if (rand.nextInt(2) == 1) {
             holdAmount = rand.nextInt(2);
         }
         holds = holdAmount * 2;
+    }
+
+    public void calculateHolds5Set() {
+        Random rand = new Random();
+        int holdAmount = 0;
+        if (rand.nextInt(2) == 1) {
+            holdAmount = rand.nextInt(2)+3;
+        }
+        holds = holdAmount;
     }
 
 

@@ -32,6 +32,10 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
     int moneyAmount = 1;
     Button submitOptions;
     boolean resume = false;
+    boolean previousSelection = false;
+    int packChoice;
+    int wheelsNum;
+    int userMoney;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +46,17 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
-
         setContentView(R.layout.activity_options);
+
+//        Intent intent = getIntent();
+//        Bundle extras = intent.getExtras();
+//
+//            previousSelection = true;
+//            packChoice = extras.getInt("pack");
+//            wheelsNum = extras.getInt("wheelsNum");
+//            userMoney = extras.getInt("walletMoney");
+//
+
 
         //create options for spinner based on pack names
         availablePacks = new SymbolPackCollection().getNames();
