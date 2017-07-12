@@ -148,6 +148,10 @@ public class Machine {
         return payOutAmount;
     }
 
+    public void setPayOutTracker(int payOutTracker) {
+        this.payOutTracker = payOutTracker;
+    }
+
     public Integer getNudges() {
         Integer nudgesNum = new Integer(nudges);
         return nudgesNum;
@@ -229,5 +233,9 @@ public void calculateHolds(){
 
     public int getWheelsNum(){
         return wheelSet.getNumOfWheels();
+    }
+
+    public void setUserMoney(int userMoney) {
+        this.userMoney = userMoney;
     }
 }

@@ -67,6 +67,8 @@ public class MainActivity extends Activity {
     int wheelsNum;
     int packChoice;
     int userMoney;
+    int userWinnings;
+    int machineCredit;
     MediaPlayer mp;
     MediaPlayer mpCoin;
     MediaPlayer mpSpin;
@@ -74,7 +76,6 @@ public class MainActivity extends Activity {
     MediaPlayer mpNudge;
     MediaPlayer mpReturn;
     MediaPlayer mpNope;
-
 
 
     Game game;
@@ -96,7 +97,6 @@ public class MainActivity extends Activity {
 //game setup
 
 
-
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
@@ -105,6 +105,8 @@ public class MainActivity extends Activity {
             packChoice = SharedPreferencesGameState.getStoredInt(this, "symbolPackChoice");
             wheelsNum = SharedPreferencesGameState.getStoredInt(this, "wheelsNum");
             userMoney = SharedPreferencesGameState.getStoredInt(this, "userMoney");
+            userWinnings = SharedPreferencesGameState.getStoredInt(this, "userWinnings");
+            machineCredit = SharedPreferencesGameState.getStoredInt(this, "machineCredit");
 
         } else {
             packChoice = extras.getInt("pack");
@@ -126,6 +128,9 @@ public class MainActivity extends Activity {
         Viewer viewer = new Viewer(player, machine);
         game = new Game(player, machine, viewer);
 
+        //resume game winnings update
+        game.machine.setPayOutTracker(userWinnings);
+        game.machine.setUserMoney(machineCredit);
 
         //fruitmachine text display
         textBar = (TextView) findViewById(R.id.text_bar);
@@ -252,7 +257,7 @@ public class MainActivity extends Activity {
                 refreshDisplay();
 
             }
-        }else {
+        } else {
             nopeSound();
             Toast.makeText(this, "no credit in the machine! add money!", Toast.LENGTH_SHORT).show();
         }
@@ -451,7 +456,7 @@ public class MainActivity extends Activity {
             } else {
                 hold.setBackgroundResource(R.drawable.hold_unavailable);
             }
-            if (counter< wheelsNum) {
+            if (counter < wheelsNum) {
                 if (game.getWheels().get(counter).isHoldOn()) {
                     hold.setBackgroundResource(R.drawable.hold_pressed);
                 }
@@ -474,40 +479,39 @@ public class MainActivity extends Activity {
         walletDisplay.setText("Wallet: " + game.player.getMoneyAmount().toString());
         textBar.setText(textMessage);
 
-        if(game.machine.checkForWin()){
+        if (game.machine.checkForWin()) {
             fanfare();
         }
     }
 
-    public void fanfare(){
+    public void fanfare() {
         mp.start();
     }
 
-    public void coin(){
+    public void coin() {
         mpCoin.start();
     }
 
-    public void spinSound(){
+    public void spinSound() {
         mpSpin.start();
     }
 
-    public void holdSound(){
+    public void holdSound() {
         mpHold.start();
     }
 
 
-    public void nudgeSound(){
+    public void nudgeSound() {
         mpNudge.start();
     }
 
-    public void returnSound(){
+    public void returnSound() {
         mpReturn.start();
     }
 
-    public void nopeSound(){
+    public void nopeSound() {
         mpNope.start();
     }
-
 
 
     public void whenOptionsButtonClicked(View view) {
