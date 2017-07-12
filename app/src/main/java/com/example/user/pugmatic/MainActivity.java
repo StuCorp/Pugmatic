@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -66,6 +67,9 @@ public class MainActivity extends Activity {
     int wheelsNum;
     int packChoice;
     int userMoney;
+    MediaPlayer mp;
+    MediaPlayer mpCoin;
+
 
     Game game;
     String textMessage = "default";
@@ -182,6 +186,9 @@ public class MainActivity extends Activity {
 //        ListView listView = (ListView) findViewById(R.id.wheel1_listview);
 //        listView.setAdapter(wheelListAdapter);
 
+        mp = MediaPlayer.create(MainActivity.this, R.raw.fanfare);
+        mpCoin = MediaPlayer.create(MainActivity.this, R.raw.coin);
+
 
         refreshDisplay();
 
@@ -208,6 +215,7 @@ public class MainActivity extends Activity {
         Log.d("Pugmatic", "money added");
         if (game.player.hasMoney()) {
             game.addMoney(1);
+            coin();
         } else {
             Toast.makeText(this, "you have no money in your wallet", Toast.LENGTH_SHORT).show();
         }
@@ -438,6 +446,17 @@ public class MainActivity extends Activity {
         walletDisplay.setText("Wallet: " + game.player.getMoneyAmount().toString());
         textBar.setText(textMessage);
 
+        if(game.machine.checkForWin()){
+            fanfare();
+        }
+    }
+
+    public void fanfare(){
+        mp.start();
+    }
+
+    public void coin(){
+        mpCoin.start();
     }
 
     public void whenOptionsButtonClicked(View view) {

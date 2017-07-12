@@ -3,6 +3,7 @@ package com.example.user.pugmatic;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,6 +37,8 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
     int packChoice;
     int wheelsNum;
     int userMoney;
+    MediaPlayer mp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +123,9 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
         moneyPicker.setOnValueChangedListener(valueChangeListener);
 
 
+        mp = MediaPlayer.create(this, R.raw.dog);
+
+
         //SUBMIT OPTIONS BUTTON
         submitOptions = (Button) findViewById(R.id.submit_options_button);
 
@@ -142,6 +148,7 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
     }
 
     public void whenSubmitButtonClicked(View view){
+        dogBark();
         this.resume = false;
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("resume", resume);
@@ -152,10 +159,16 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
     }
 
     public void whenResumeButtonClicked(View view){
+        dogBark();
         this.resume = true;
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("resume", resume);
         startActivity(intent);
     }
 
+
+    public void dogBark(){
+
+        mp.start();
+    }
 }
