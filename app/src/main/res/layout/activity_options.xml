@@ -9,7 +9,6 @@
     tools:context="com.example.user.pugmatic.OptionsActivity">
 
 
-
     <android.support.v7.widget.FitWindowsLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,7 +34,7 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/headertext_container"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/option_menu_container_height"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toTopOf="@+id/symbol_pack_choice_container"
             app:layout_constraintTop_toTopOf="parent"
@@ -72,7 +71,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pugmatic_text_image" />
+                app:layout_constraintTop_toBottomOf="@+id/pugmatic_text_image"
+                android:layout_marginTop="10dp" />
 
         </android.support.constraint.ConstraintLayout>
 
@@ -80,12 +80,12 @@
             android:id="@+id/symbol_pack_choice_container"
             android:layout_width="match_parent"
             android:layout_height="@dimen/option_menu_container_height"
+            android:layout_marginTop="30dp"
             app:layout_constraintBottom_toTopOf="@+id/choose_wheel_num_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/headertext_container"
 
-            >
+            app:layout_constraintTop_toBottomOf="@+id/headertext_container">
 
             <ImageView
                 android:id="@+id/choose_pack_text"
@@ -105,8 +105,8 @@
 
             <Spinner
                 android:id="@+id/packs_spinner"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="16dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
@@ -132,7 +132,6 @@
                 android:id="@+id/choose_wheel_num_text"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:src="@drawable/wheels_option_image"
@@ -140,27 +139,26 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/wheel_num_switch"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.494" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <Switch
                 android:id="@+id/wheel_num_switch"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:textAlignment="textEnd"
                 android:textColor="@color/colorAccent"
                 android:textColorHighlight="@android:color/holo_blue_bright"
                 android:textColorHint="@android:color/holo_green_light"
+
                 app:layout_constraintLeft_toRightOf="@+id/choose_wheel_num_text"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
 
@@ -168,13 +166,14 @@
             android:id="@+id/choose_wallet_container"
             android:layout_width="match_parent"
             android:layout_height="@dimen/option_menu_container_height"
+            android:layout_marginBottom="30dp"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="81dp">
 
             <NumberPicker
                 android:id="@+id/money_picker"
-                android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/user_money_tv"

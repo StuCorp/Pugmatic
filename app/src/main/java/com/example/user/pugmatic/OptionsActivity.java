@@ -67,6 +67,8 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
         //WHEEL NUMBER SWITCH
         //Find the switch
         switchWheel = (Switch) findViewById(R.id.wheel_num_switch);
+        switchWheel.setTextOff("3");
+        switchWheel.setTextOn("5");
         //create a listener
         CompoundButton.OnCheckedChangeListener checkListener = new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -76,7 +78,7 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
                 } else {
                     wheelChoice = 3;
                 }
-                Toast.makeText(getApplicationContext(), "choice" + wheelChoice, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "choice" + wheelChoice, Toast.LENGTH_SHORT).show();
             }
         };
         //set the listener on the switch - handles the listening

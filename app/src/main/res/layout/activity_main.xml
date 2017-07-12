@@ -457,7 +457,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/control_panel_container"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/winningscredit_display_container"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -477,8 +477,8 @@
 
         <Button
             android:id="@+id/spin_button"
-            android:layout_width="64dp"
-            android:layout_height="48dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@mipmap/pugmatic"
             android:onClick="whenSpinClicked"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -544,69 +544,69 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
->
-        <ImageView
-            android:id="@+id/circle1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/circle2"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <!--<android.support.constraint.ConstraintLayout-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:textAlignment="center"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+<!--&gt;-->
+        <!--<ImageView-->
+            <!--android:id="@+id/circle1"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:background="@color/colorAccent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toLeftOf="@+id/circle2"-->
+            <!--app:layout_constraintTop_toTopOf="parent"/>-->
 
-        <ImageView
-            android:id="@+id/circle2"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/circle1"
-            app:layout_constraintRight_toLeftOf="@+id/circle3"
+        <!--<ImageView-->
+            <!--android:id="@+id/circle2"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:background="@color/colorAccent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintLeft_toRightOf="@+id/circle1"-->
+            <!--app:layout_constraintRight_toLeftOf="@+id/circle3"-->
 
-            app:layout_constraintTop_toTopOf="parent" />
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
 
-        <ImageView
-            android:id="@+id/circle3"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/circle2"
-            app:layout_constraintRight_toLeftOf="@+id/circle4"
-            app:layout_constraintTop_toTopOf="parent" />
+        <!--<ImageView-->
+            <!--android:id="@+id/circle3"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:background="@color/colorAccent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintLeft_toRightOf="@+id/circle2"-->
+            <!--app:layout_constraintRight_toLeftOf="@+id/circle4"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
 
-        <ImageView
-            android:id="@+id/circle4"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/circle3"
-            app:layout_constraintRight_toLeftOf="@+id/circle5"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <ImageView
-            android:id="@+id/circle5"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/circle4"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <!--<ImageView-->
+            <!--android:id="@+id/circle4"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:background="@color/colorAccent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintLeft_toRightOf="@+id/circle3"-->
+            <!--app:layout_constraintRight_toLeftOf="@+id/circle5"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
 
 
+        <!--<ImageView-->
+            <!--android:id="@+id/circle5"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:background="@color/colorAccent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintLeft_toRightOf="@+id/circle4"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
 
-    </android.support.constraint.ConstraintLayout>
+
+
+    <!--</android.support.constraint.ConstraintLayout>-->
 
 </android.support.constraint.ConstraintLayout>
 
