@@ -88,7 +88,6 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
         switchWheel.setTextOn("5");
         switchWheel.setBackgroundColor(Color.rgb(255, 64, 169));
         switchWheel.setTextColor(Color.RED);
-        switchWheel.setThu
         //create a listener
         CompoundButton.OnCheckedChangeListener checkListener = new CompoundButton.OnCheckedChangeListener() {
             @Override
