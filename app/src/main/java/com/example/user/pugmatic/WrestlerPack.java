@@ -22,13 +22,13 @@ public class WrestlerPack extends SymbolPack {
 
     public WrestlerPack() {
         hitman = new Symbol("hitman", 10, R.drawable.wrestlerbrethitman);
-        golddust = new Symbol("golddust", 7, R.drawable.wrestlergolddust);
-        hulk = new Symbol("hulk", 5, R.drawable.wrestlerhulk);
-        papashango = new Symbol("papashango", 20, R.drawable.wrestlerpapashango);
+        golddust = new Symbol("golddust", 5, R.drawable.wrestlergolddust);
+        hulk = new Symbol("hulk", 15, R.drawable.wrestlerhulk);
+        papashango = new Symbol("papashango", 25, R.drawable.wrestlerpapashango);
         rock = new Symbol("rock", 20, R.drawable.wrestlerrock);
-        stonecold = new Symbol("stonecold", 20, R.drawable.wrestlerstoncold);
-        ultimate = new Symbol("ultimate", 20, R.drawable.wrestlerultimatewarrior);
-        undertaker= new Symbol("undertaker", 20, R.drawable.wrestlerundertaker);
+        stonecold = new Symbol("stonecold", 6, R.drawable.wrestlerstoncold);
+        ultimate = new Symbol("ultimate", 12, R.drawable.wrestlerultimatewarrior);
+        undertaker= new Symbol("undertaker", 8, R.drawable.wrestlerundertaker);
 
 
         this.pack = new ArrayList<>(Arrays.asList((Symbol) hitman, golddust, hulk, papashango, rock, stonecold, ultimate, undertaker));

@@ -20,13 +20,13 @@ public class EmojiFacePack extends SymbolPack {
     String name = "EmojiFacePack";
 
     public EmojiFacePack() {
-        cowboy = new Symbol("cowboy", 10, R.drawable.facecowboy);
-        cry = new Symbol("cry", 7, R.drawable.facecry);
+        cowboy = new Symbol("cowboy", 7, R.drawable.facecowboy);
+        cry = new Symbol("cry", 3, R.drawable.facecry);
         devil = new Symbol("devil", 5, R.drawable.facedevil);
-        heart = new Symbol("hear", 20, R.drawable.faceheart);
-        laugh = new Symbol("laugh", 20, R.drawable.facelaugh);
-        money = new Symbol("money", 20, R.drawable.facemoney);
-        vom = new Symbol("vom", 20, R.drawable.facevom);
+        heart = new Symbol("hear", 8, R.drawable.faceheart);
+        laugh = new Symbol("laugh", 6, R.drawable.facelaugh);
+        money = new Symbol("money", 25, R.drawable.facemoney);
+        vom = new Symbol("vom", 5, R.drawable.facevom);
 
         this.pack = new ArrayList<>(Arrays.asList((Symbol) cowboy, cry, devil, heart, laugh, money, vom));
     }

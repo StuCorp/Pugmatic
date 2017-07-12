@@ -23,13 +23,13 @@ public class EmojiClassicPack extends SymbolPack {
     String name = "EmojiClassicPack";
 
     public EmojiClassicPack() {
-        chick = new Symbol("chick", 10, R.drawable.hatchingchick);
-        facepalm = new Symbol("facepalm", 7, R.drawable.facepalm);
+        chick = new Symbol("chick", 7, R.drawable.hatchingchick);
+        facepalm = new Symbol("facepalm", 3, R.drawable.facepalm);
         moon = new Symbol("moon", 5, R.drawable.moon);
-        onehundred = new Symbol("onehundred", 20, R.drawable.onehundred);
-        partypopper = new Symbol("partypopper", 20, R.drawable.partypopper);
+        onehundred = new Symbol("onehundred", 10, R.drawable.onehundred);
+        partypopper = new Symbol("partypopper", 3, R.drawable.partypopper);
         santa = new Symbol("santa", 20, R.drawable.santa);
-        shruggirl = new Symbol("shruggirl", 20, R.drawable.shruggirl);
+        shruggirl = new Symbol("shruggirl", 1, R.drawable.shruggirl);
 
         this.pack = new ArrayList<>(Arrays.asList((Symbol) chick, facepalm, moon, onehundred, partypopper, santa, shruggirl));
     }
