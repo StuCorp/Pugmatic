@@ -49,7 +49,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraint_readout_container"
         android:layout_width="0dp"
-        android:layout_height="20dp"
+        android:layout_height="0dp"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/constraint_image_container"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -60,7 +60,7 @@
         <TextView
             android:id="@+id/text_bar"
             android:layout_width="0dp"
-            android:layout_height="20dp"
+            android:layout_height="0dp"
             android:text="Gamble your life away!"
             android:textAlignment="center"
             android:textSize="15dp"
@@ -74,7 +74,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraint_image_container"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/blankbackgroundsmall"
@@ -99,8 +99,8 @@
 
             <ImageView
                 android:id="@+id/wheel1_row_top"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/wheel2_row_top"
@@ -108,8 +108,8 @@
 
             <ImageView
                 android:id="@+id/wheel2_row_top"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel1_row_top"
                 app:layout_constraintRight_toLeftOf="@+id/wheel3_row_top"
@@ -117,8 +117,8 @@
 
             <ImageView
                 android:id="@+id/wheel3_row_top"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel2_row_top"
                 app:layout_constraintRight_toLeftOf="@+id/wheel4_row_top"
@@ -126,8 +126,8 @@
 
             <ImageView
                 android:id="@+id/wheel4_row_top"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel3_row_top"
                 app:layout_constraintRight_toLeftOf="@+id/wheel5_row_top"
@@ -135,8 +135,8 @@
 
             <ImageView
                 android:id="@+id/wheel5_row_top"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel4_row_top"
                 app:layout_constraintRight_toRightOf="parent"
@@ -145,8 +145,8 @@
 
             <ImageView
                 android:id="@+id/wheel1_row_mid"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/wheel2_row_mid"
@@ -154,8 +154,8 @@
 
             <ImageView
                 android:id="@+id/wheel2_row_mid"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel1_row_mid"
                 app:layout_constraintRight_toLeftOf="@+id/wheel3_row_mid"
@@ -165,8 +165,8 @@
 
             <ImageView
                 android:id="@+id/wheel3_row_mid"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel2_row_mid"
                 app:layout_constraintRight_toLeftOf="@+id/wheel4_row_mid"
@@ -174,8 +174,8 @@
 
             <ImageView
                 android:id="@+id/wheel4_row_mid"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel3_row_mid"
                 app:layout_constraintRight_toLeftOf="@+id/wheel5_row_mid"
@@ -183,8 +183,8 @@
 
             <ImageView
                 android:id="@+id/wheel5_row_mid"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel4_row_mid"
                 app:layout_constraintRight_toRightOf="parent"
@@ -192,8 +192,8 @@
 
             <ImageView
                 android:id="@+id/wheel1_row_bot"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/wheel2_row_bot"
@@ -201,8 +201,8 @@
 
             <ImageView
                 android:id="@+id/wheel2_row_bot"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel1_row_bot"
                 app:layout_constraintRight_toLeftOf="@+id/wheel3_row_bot"
@@ -212,8 +212,8 @@
 
             <ImageView
                 android:id="@+id/wheel3_row_bot"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel2_row_bot"
                 app:layout_constraintRight_toLeftOf="@+id/wheel4_row_bot"
@@ -221,8 +221,8 @@
 
             <ImageView
                 android:id="@+id/wheel4_row_bot"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel3_row_bot"
                 app:layout_constraintRight_toLeftOf="@+id/wheel5_row_bot"
@@ -230,8 +230,8 @@
 
             <ImageView
                 android:id="@+id/wheel5_row_bot"
-                android:layout_width="@dimen/symbol_size_layout"
-                android:layout_height="@dimen/symbol_size_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/empty_box"
                 app:layout_constraintLeft_toRightOf="@+id/wheel4_row_bot"
                 app:layout_constraintRight_toRightOf="parent"
@@ -263,8 +263,8 @@
 
             <Button
                 android:id="@+id/nudge1"
-                android:layout_width="@dimen/nudge_width"
-                android:layout_height="@dimen/nudge_height"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
                 android:background="@drawable/nudge_unavailable"
                 android:onClick="whenNudge1Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -274,8 +274,8 @@
 
             <Button
                 android:id="@+id/nudge2"
-                android:layout_width="@dimen/nudge_width"
-                android:layout_height="@dimen/nudge_height"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
                 android:background="@drawable/nudge_unavailable"
                 android:onClick="whenNudge2Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -285,8 +285,8 @@
 
             <Button
                 android:id="@+id/nudge3"
-                android:layout_width="@dimen/nudge_width"
-                android:layout_height="@dimen/nudge_height"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
                 android:background="@drawable/nudge_unavailable"
                 android:onClick="whenNudge3Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -297,8 +297,8 @@
 
             <Button
                 android:id="@+id/nudge4"
-                android:layout_width="@dimen/nudge_width"
-                android:layout_height="@dimen/nudge_height"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
                 android:background="@drawable/nudge_unavailable"
                 android:onClick="whenNudge4Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -309,8 +309,8 @@
 
             <Button
                 android:id="@+id/nudge5"
-                android:layout_width="@dimen/nudge_width"
-                android:layout_height="@dimen/nudge_height"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
                 android:background="@drawable/nudge_unavailable"
                 android:onClick="whenNudge5Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -332,8 +332,8 @@
 
             <Button
                 android:id="@+id/hold1"
-                android:layout_width="@dimen/nudge_width"
-                android:layout_height="@dimen/nudge_height"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
                 android:background="@drawable/hold_unavailable"
                 android:onClick="whenHold1Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -343,8 +343,8 @@
 
             <Button
                 android:id="@+id/hold2"
-                android:layout_width="@dimen/nudge_width"
-                android:layout_height="@dimen/nudge_height"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
                 android:background="@drawable/hold_unavailable"
                 android:onClick="whenHold2Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -357,8 +357,8 @@
             <Button
                 android:id="@+id/hold3"
 
-                android:layout_width="@dimen/nudge_width"
-                android:layout_height="@dimen/nudge_height"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
                 android:background="@drawable/hold_unavailable"
                 android:onClick="whenHold3Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -369,8 +369,8 @@
             <Button
                 android:id="@+id/hold4"
 
-                android:layout_width="@dimen/nudge_width"
-                android:layout_height="@dimen/nudge_height"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
                 android:background="@drawable/hold_unavailable"
                 android:onClick="whenHold4Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -380,8 +380,8 @@
 
             <Button
                 android:id="@+id/hold5"
-                android:layout_width="@dimen/nudge_width"
-                android:layout_height="@dimen/nudge_height"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
                 android:background="@drawable/hold_unavailable"
                 android:onClick="whenHold5Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -395,7 +395,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/nudge_hold_display_container"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/control_panel_container"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -464,7 +464,6 @@
             android:id="@+id/control_panel_container"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/winningscredit_display_container"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nudge_hold_display_container"
