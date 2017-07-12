@@ -73,6 +73,7 @@ public class MainActivity extends Activity {
     MediaPlayer mpHold;
     MediaPlayer mpNudge;
     MediaPlayer mpReturn;
+    MediaPlayer mpNope;
 
 
 
@@ -199,6 +200,7 @@ public class MainActivity extends Activity {
         mpHold = MediaPlayer.create(MainActivity.this, R.raw.hold);
         mpNudge = MediaPlayer.create(MainActivity.this, R.raw.nudge);
         mpReturn = MediaPlayer.create(MainActivity.this, R.raw.returnbutton);
+        mpNope = MediaPlayer.create(MainActivity.this, R.raw.nope);
 
         refreshDisplay();
 
@@ -227,6 +229,7 @@ public class MainActivity extends Activity {
             game.addMoney(1);
             coin();
         } else {
+            nopeSound();
             Toast.makeText(this, "you have no money in your wallet", Toast.LENGTH_SHORT).show();
         }
         refreshDisplay();
@@ -249,7 +252,11 @@ public class MainActivity extends Activity {
                 refreshDisplay();
 
             }
+        }else {
+            nopeSound();
+            Toast.makeText(this, "no credit in the machine! add money!", Toast.LENGTH_SHORT).show();
         }
+
     }
 
 
@@ -495,6 +502,10 @@ public class MainActivity extends Activity {
 
     public void returnSound(){
         mpReturn.start();
+    }
+
+    public void nopeSound(){
+        mpNope.start();
     }
 
 
