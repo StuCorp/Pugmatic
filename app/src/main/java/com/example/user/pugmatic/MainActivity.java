@@ -3,6 +3,7 @@ package com.example.user.pugmatic;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends Activity {
 
@@ -43,12 +45,14 @@ public class MainActivity extends Activity {
     Button nudge3;
     Button nudge4;
     Button nudge5;
+    ArrayList<Button> nudges;
 
     Button hold1;
     Button hold2;
     Button hold3;
     Button hold4;
     Button hold5;
+    ArrayList<Button> holds;
 
 
     TextView nudgeDisplay;
@@ -72,8 +76,6 @@ public class MainActivity extends Activity {
 
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-
 
 
         setContentView(R.layout.activity_main);
@@ -145,6 +147,8 @@ public class MainActivity extends Activity {
         nudge4 = (Button) findViewById(R.id.nudge4);
         nudge5 = (Button) findViewById(R.id.nudge5);
 
+        nudges = new ArrayList<>(Arrays.asList(nudge1, nudge2, nudge3, nudge4, nudge5));
+
         hold1 = (Button) findViewById(R.id.hold1);
         hold2 = (Button) findViewById(R.id.hold2);
         hold3 = (Button) findViewById(R.id.hold3);
@@ -152,6 +156,8 @@ public class MainActivity extends Activity {
         //extra holds
         hold4 = (Button) findViewById(R.id.hold4);
         hold5 = (Button) findViewById(R.id.hold5);
+
+        holds = new ArrayList<>(Arrays.asList(hold1, hold2, hold3, hold4, hold5));
 
 
         nudgeDisplay = (TextView) findViewById(R.id.nudge_display);
@@ -294,7 +300,6 @@ public class MainActivity extends Activity {
     }
 
 
-
     public void whenHold1Clicked(View view) {
         Log.d("Pugmatic", "hold1 clicked");
         if (game.machine.getWheels().get(0).isHoldOn()) {
@@ -397,8 +402,32 @@ public class MainActivity extends Activity {
             nudge4.setVisibility(View.GONE);
             nudge5.setVisibility(View.GONE);
 
+
             hold4.setVisibility(View.GONE);
             hold5.setVisibility(View.GONE);
+        }
+
+        int counter = 0;
+        for (Button hold : holds) {
+            if (game.isHolds()) {
+                hold.setBackgroundResource(R.drawable.hold_available);
+            } else {
+                hold.setBackgroundResource(R.drawable.hold_unavailable);
+            }
+            if (counter< wheelsNum) {
+                if (game.getWheels().get(counter).isHoldOn()) {
+                    hold.setBackgroundResource(R.drawable.hold_pressed);
+                }
+            }
+            counter++;
+        }
+
+        for (Button nudge : nudges) {
+            if (game.isNudges()) {
+                nudge.setBackgroundResource(R.drawable.nudge_available);
+            } else {
+                nudge.setBackgroundResource(R.drawable.nudge_unavailable);
+            }
         }
 
         nudgeDisplay.setText("Nudges: " + game.machine.getNudges().toString());
