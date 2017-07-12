@@ -397,7 +397,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/nudge_hold_display_container"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="30dp"
             app:layout_constraintBottom_toTopOf="@+id/control_panel_container"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -406,29 +406,56 @@
 
             <TextView
                 android:id="@+id/nudge_display"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginStart="30dp"
                 android:text="nudge count"
                 android:textSize="17dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/hold_display"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/hold_display"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginStart="30dp"
                 android:text="hold count"
                 android:textSize="17dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintLeft_toRightOf="@+id/nudge_display"
+                app:layout_constraintRight_toLeftOf="@+id/credit_display"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/credit_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="credit: xx"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/hold_display"
+                app:layout_constraintRight_toLeftOf="@+id/winnings_display"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/winnings_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="winnings: xx"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/credit_display"
+                app:layout_constraintRight_toLeftOf="@+id/wallet_display"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/wallet_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wallet: xx"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/winnings_display"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -480,50 +507,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/winningscredit_display_container"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/control_panel_container">
+        <!--<android.support.constraint.ConstraintLayout-->
+            <!--android:id="@+id/winningscredit_display_container"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/control_panel_container">-->
 
 
-            <TextView
-                android:id="@+id/winnings_display"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="winnings: xx"
-                android:textSize="17dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/credit_display"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/credit_display"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="credit: xx"
-                android:textSize="17dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/wallet_display"
-                app:layout_constraintRight_toLeftOf="@+id/winnings_display"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/wallet_display"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="wallet: xx"
-                android:textSize="17dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/credit_display"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </android.support.constraint.ConstraintLayout>
+        <!--</android.support.constraint.ConstraintLayout>-->
 
         <!--<android.support.constraint.ConstraintLayout-->
             <!--android:layout_width="0dp"-->
