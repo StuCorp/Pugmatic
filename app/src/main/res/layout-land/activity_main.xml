@@ -76,7 +76,6 @@
         android:id="@+id/constraint_image_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:background="@drawable/blankbackgroundsmall"
         app:layout_constraintBottom_toTopOf="@+id/nudgesandholds_mega_container"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -396,7 +395,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/nudge_hold_display_container"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="22dp"
         app:layout_constraintBottom_toTopOf="@+id/control_panel_container"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -460,50 +459,50 @@
     </android.support.constraint.ConstraintLayout>
 
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/control_panel_container"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/control_panel_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nudge_hold_display_container">
+
+        <Button
+            android:id="@+id/add_money_button"
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:background="@drawable/add_money_image"
+            android:onClick="whenAddMoneyClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/spin_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/spin_button"
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:background="@mipmap/pugmatic"
+            android:onClick="whenSpinClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/add_money_button"
+            app:layout_constraintRight_toLeftOf="@+id/return_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/return_button"
+
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:background="@drawable/return_button_image"
+            android:onClick="whenOptionsButtonClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/spin_button"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nudge_hold_display_container"
-            android:layout_marginTop="16dp">
-
-            <Button
-                android:id="@+id/add_money_button"
-                android:layout_width="64dp"
-                android:layout_height="48dp"
-                android:background="@drawable/add_money_image"
-                android:onClick="whenAddMoneyClicked"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/spin_button"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <Button
-                android:id="@+id/spin_button"
-                android:layout_width="64dp"
-                android:layout_height="48dp"
-                android:background="@mipmap/pugmatic"
-                android:onClick="whenSpinClicked"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/add_money_button"
-                app:layout_constraintRight_toLeftOf="@+id/return_button"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/return_button"
-
-                android:layout_width="64dp"
-                android:layout_height="48dp"
-                android:background="@drawable/return_button_image"
-                android:onClick="whenOptionsButtonClicked"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/spin_button"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 
         <!--<android.support.constraint.ConstraintLayout-->
             <!--android:id="@+id/winningscredit_display_container"-->
