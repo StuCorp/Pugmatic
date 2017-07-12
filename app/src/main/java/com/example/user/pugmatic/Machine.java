@@ -177,6 +177,9 @@ public class Machine {
     public void calculateNudges() {
         Random rand = new Random();
         int nudgeAmount = rand.nextInt(3);
+        if (nudgeAmount>0){
+            nudgeAmount = rand.nextInt(3) + 1;
+        }
         nudges = nudgeAmount;
     }
 public void calculateHolds(){
