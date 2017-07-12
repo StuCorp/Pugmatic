@@ -2,6 +2,7 @@ package com.example.user.pugmatic;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -69,6 +70,8 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
         switchWheel = (Switch) findViewById(R.id.wheel_num_switch);
         switchWheel.setTextOff("3");
         switchWheel.setTextOn("5");
+        switchWheel.setBackgroundColor(Color.rgb(255, 223, 15));
+        switchWheel.setTextColor(Color.RED);
         //create a listener
         CompoundButton.OnCheckedChangeListener checkListener = new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -113,6 +116,8 @@ public class OptionsActivity extends Activity implements AdapterView.OnItemSelec
     public void onItemSelected(AdapterView<?> adapterView, View view, int arrayIndex, long l) {
         TextView choice = (TextView) view;
         //get string from textview
+        ((TextView) adapterView.getChildAt(0)).setTextColor(Color.rgb(255, 223, 15));
+//        ((TextView) adapterView.getChildAt(0)).setTextSize(5);
         spinnerChoice = arrayIndex;
 //        String packChoice = choice.getText().toString();
 //        Toast.makeText(this, "You selected " + packChoice, Toast.LENGTH_SHORT).show();

@@ -46,29 +46,30 @@
         </android.support.constraint.ConstraintLayout>
 
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraint_readout_container"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_readout_container"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/constraint_image_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_title_container_main">
+
+
+        <TextView
+            android:id="@+id/text_bar"
             android:layout_width="0dp"
             android:layout_height="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/constraint_image_container"
+            android:text="Gamble your life away!"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraint_title_container_main">
+            app:layout_constraintTop_toTopOf="parent" />
 
-
-            <TextView
-                android:id="@+id/text_bar"
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:text="Gamble your life away!"
-                android:textAlignment="center"
-                android:textSize="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
 
 
     <android.support.constraint.ConstraintLayout
@@ -241,225 +242,222 @@
     </android.support.constraint.ConstraintLayout>
 
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/nudgesandholds_mega_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blankbackgroundsmall"
+        app:layout_constraintBottom_toTopOf="@+id/nudge_hold_display_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_image_container">
+
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/nudgesandholds_mega_container"
+            android:id="@+id/constrain_button_container"
             android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@drawable/blankbackgroundsmall"
-            app:layout_constraintTop_toBottomOf="@+id/constraint_image_container"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/hold_container"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/nudge_hold_display_container">
+            app:layout_constraintTop_toBottomOf="parent">
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/constrain_button_container"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                app:layout_constraintBottom_toTopOf="@+id/hold_container"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="parent">
-
-                <Button
-                    android:id="@+id/nudge1"
-                    android:layout_width="@dimen/nudge_width"
-                    android:layout_height="@dimen/nudge_height"
-                    android:background="@drawable/nudge_unavailable"
-                    android:onClick="whenNudge1Clicked"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/nudge2"
-                    app:layout_constraintTop_toTopOf="parent"
-                    />
-
-                <Button
-                    android:id="@+id/nudge2"
-                    android:layout_width="@dimen/nudge_width"
-                    android:layout_height="@dimen/nudge_height"
-                    android:background="@drawable/nudge_unavailable"
-                    android:onClick="whenNudge2Clicked"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/nudge1"
-                    app:layout_constraintRight_toLeftOf="@+id/nudge3"
-                    app:layout_constraintTop_toTopOf="parent"
-                    />
-
-                <Button
-                    android:id="@+id/nudge3"
-                    android:layout_width="@dimen/nudge_width"
-                    android:layout_height="@dimen/nudge_height"
-                    android:background="@drawable/nudge_unavailable"
-                    android:onClick="whenNudge3Clicked"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/nudge2"
-                    app:layout_constraintRight_toLeftOf="@+id/nudge4"
-                    app:layout_constraintTop_toTopOf="parent"
-                    />
-
-
-                <Button
-                    android:id="@+id/nudge4"
-                    android:layout_width="@dimen/nudge_width"
-                    android:layout_height="@dimen/nudge_height"
-                    android:background="@drawable/nudge_unavailable"
-                    android:onClick="whenNudge4Clicked"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/nudge3"
-                    app:layout_constraintRight_toLeftOf="@+id/nudge5"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <Button
-                    android:id="@+id/nudge5"
-                    android:layout_width="@dimen/nudge_width"
-                    android:layout_height="@dimen/nudge_height"
-                    android:background="@drawable/nudge_unavailable"
-                    android:onClick="whenNudge5Clicked"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/nudge4"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </android.support.constraint.ConstraintLayout>
-
-
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/hold_container"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
+            <Button
+                android:id="@+id/nudge1"
+                android:layout_width="@dimen/nudge_width"
+                android:layout_height="@dimen/nudge_height"
+                android:background="@drawable/nudge_unavailable"
+                android:onClick="whenNudge1Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/nudge2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/nudge2"
+                android:layout_width="@dimen/nudge_width"
+                android:layout_height="@dimen/nudge_height"
+                android:background="@drawable/nudge_unavailable"
+                android:onClick="whenNudge2Clicked"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/nudge1"
+                app:layout_constraintRight_toLeftOf="@+id/nudge3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/nudge3"
+                android:layout_width="@dimen/nudge_width"
+                android:layout_height="@dimen/nudge_height"
+                android:background="@drawable/nudge_unavailable"
+                android:onClick="whenNudge3Clicked"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/nudge2"
+                app:layout_constraintRight_toLeftOf="@+id/nudge4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <Button
+                android:id="@+id/nudge4"
+                android:layout_width="@dimen/nudge_width"
+                android:layout_height="@dimen/nudge_height"
+                android:background="@drawable/nudge_unavailable"
+                android:onClick="whenNudge4Clicked"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/nudge3"
+                app:layout_constraintRight_toLeftOf="@+id/nudge5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <Button
+                android:id="@+id/nudge5"
+                android:layout_width="@dimen/nudge_width"
+                android:layout_height="@dimen/nudge_height"
+                android:background="@drawable/nudge_unavailable"
+                android:onClick="whenNudge5Clicked"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/nudge4"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constrain_button_container">
-
-                <Button
-                    android:id="@+id/hold1"
-                    android:layout_width="@dimen/nudge_width"
-                    android:layout_height="@dimen/nudge_height"
-                    android:background="@drawable/hold_unavailable"
-                    android:onClick="whenHold1Clicked"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/hold2"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/hold2"
-                    android:layout_width="@dimen/nudge_width"
-                    android:layout_height="@dimen/nudge_height"
-                    android:background="@drawable/hold_unavailable"
-                    android:onClick="whenHold2Clicked"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/hold1"
-                    app:layout_constraintRight_toLeftOf="@+id/hold3"
-                    app:layout_constraintTop_toTopOf="parent"
-
-                    />
-
-                <Button
-                    android:id="@+id/hold3"
-
-                    android:layout_width="@dimen/nudge_width"
-                    android:layout_height="@dimen/nudge_height"
-                    android:background="@drawable/hold_unavailable"
-                    android:onClick="whenHold3Clicked"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/hold2"
-                    app:layout_constraintRight_toLeftOf="@+id/hold4"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/hold4"
-
-                    android:layout_width="@dimen/nudge_width"
-                    android:layout_height="@dimen/nudge_height"
-                    android:background="@drawable/hold_unavailable"
-                    android:onClick="whenHold4Clicked"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/hold3"
-                    app:layout_constraintRight_toLeftOf="@+id/hold5"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/hold5"
-                    android:layout_width="@dimen/nudge_width"
-                    android:layout_height="@dimen/nudge_height"
-                    android:background="@drawable/hold_unavailable"
-                    android:onClick="whenHold5Clicked"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/hold4"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </android.support.constraint.ConstraintLayout>
+                app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
+
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/nudge_hold_display_container"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/control_panel_container"
+            android:id="@+id/hold_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nudgesandholds_mega_container">
+            app:layout_constraintTop_toBottomOf="@+id/constrain_button_container">
 
-            <TextView
-                android:id="@+id/nudge_display"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="nudge count"
-                android:textSize="17dp"
+            <Button
+                android:id="@+id/hold1"
+                android:layout_width="@dimen/nudge_width"
+                android:layout_height="@dimen/nudge_height"
+                android:background="@drawable/hold_unavailable"
+                android:onClick="whenHold1Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/hold_display"
+                app:layout_constraintRight_toLeftOf="@+id/hold2"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/hold_display"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="hold count"
-                android:textSize="17dp"
+            <Button
+                android:id="@+id/hold2"
+                android:layout_width="@dimen/nudge_width"
+                android:layout_height="@dimen/nudge_height"
+                android:background="@drawable/hold_unavailable"
+                android:onClick="whenHold2Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/nudge_display"
-                app:layout_constraintRight_toLeftOf="@+id/credit_display"
+                app:layout_constraintLeft_toRightOf="@+id/hold1"
+                app:layout_constraintRight_toLeftOf="@+id/hold3"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+            <Button
+                android:id="@+id/hold3"
+
+                android:layout_width="@dimen/nudge_width"
+                android:layout_height="@dimen/nudge_height"
+                android:background="@drawable/hold_unavailable"
+                android:onClick="whenHold3Clicked"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/hold2"
+                app:layout_constraintRight_toLeftOf="@+id/hold4"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/credit_display"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="credit: xx"
-                android:textSize="17dp"
+            <Button
+                android:id="@+id/hold4"
+
+                android:layout_width="@dimen/nudge_width"
+                android:layout_height="@dimen/nudge_height"
+                android:background="@drawable/hold_unavailable"
+                android:onClick="whenHold4Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/hold_display"
-                app:layout_constraintRight_toLeftOf="@+id/winnings_display"
+                app:layout_constraintLeft_toRightOf="@+id/hold3"
+                app:layout_constraintRight_toLeftOf="@+id/hold5"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/winnings_display"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="winnings: xx"
-                android:textSize="17dp"
+            <Button
+                android:id="@+id/hold5"
+                android:layout_width="@dimen/nudge_width"
+                android:layout_height="@dimen/nudge_height"
+                android:background="@drawable/hold_unavailable"
+                android:onClick="whenHold5Clicked"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/credit_display"
-                app:layout_constraintRight_toLeftOf="@+id/wallet_display"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/wallet_display"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="wallet: xx"
-                android:textSize="17dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/winnings_display"
+                app:layout_constraintLeft_toRightOf="@+id/hold4"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/nudge_hold_display_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/control_panel_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nudgesandholds_mega_container">
+
+        <TextView
+            android:id="@+id/nudge_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nudge count"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/hold_display"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/hold_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hold count"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/nudge_display"
+            app:layout_constraintRight_toLeftOf="@+id/credit_display"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/credit_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="credit: xx"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/hold_display"
+            app:layout_constraintRight_toLeftOf="@+id/winnings_display"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/winnings_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="winnings: xx"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/credit_display"
+            app:layout_constraintRight_toLeftOf="@+id/wallet_display"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/wallet_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="wallet: xx"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/winnings_display"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
 
 
         <android.support.constraint.ConstraintLayout
@@ -469,7 +467,8 @@
             app:layout_constraintBottom_toTopOf="@+id/winningscredit_display_container"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nudge_hold_display_container">
+            app:layout_constraintTop_toBottomOf="@+id/nudge_hold_display_container"
+            android:layout_marginTop="16dp">
 
             <Button
                 android:id="@+id/add_money_button"
