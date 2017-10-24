@@ -1,5 +1,9 @@
 # Pugmatic
 
+## 5-reel version:
+
+<img width="640" alt="screenshot of pugmatic game, five reel version" src="https://user-images.githubusercontent.com/27961805/31938075-60a7de82-b8ae-11e7-82a8-ebc75aef592d.png">
+
 A fruit machine style android game. Based on a terminal-based Java game I wrote, I used android studio and felt tip pens to create it.
 
 
@@ -37,9 +41,6 @@ Android Studio.
 
 <img width="360" alt="screenshot of pugmatic game, three reel version" src="https://user-images.githubusercontent.com/27961805/31937926-d72c1510-b8ad-11e7-88de-dc47cddec1a5.png">
 
-## 5-reel version:
-
-<img width="640" alt="screenshot of pugmatic game, five reel version" src="https://user-images.githubusercontent.com/27961805/31938075-60a7de82-b8ae-11e7-82a8-ebc75aef592d.png">
 
 
 
