@@ -1,6 +1,5 @@
 # Pugmatic
 
-## 5-reel version:
 
 <img width="640" alt="screenshot of pugmatic game, five reel version" src="https://user-images.githubusercontent.com/27961805/31938075-60a7de82-b8ae-11e7-82a8-ebc75aef592d.png">
 
