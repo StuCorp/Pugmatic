@@ -6,7 +6,7 @@ Menu
 
 <img alt="screenshot of pugmatic menu" scr="https://user-images.githubusercontent.com/27961805/31937927-d74c5762-b8ad-11e7-8396-154cfcba84e7.png">
 
-<img width="1265" alt="screen shot 2017-08-21 at 21 55 43" src="https://user-images.githubusercontent.com/27961809/29539318-3d0d6aba-86c1-11e7-86c7-79af16dbf079.png">
+<img width="1265" alt="screen shot 2017-08-21 at 21 55 43" src="https://user-images.githubusercontent.com/27961805/31937927-d74c5762-b8ad-11e7-8396-154cfcba84e7.png">
 
 3-reel
 
